@@ -8,7 +8,7 @@ const Hero: React.FC = () => {
     <div className="gap-x-15 grid w-full grid-cols-2 items-center justify-center bg-gray-50 px-20 md:h-[350px]">
       <div className="relative h-full px-12">
         <Image
-          className="absolute bottom-0 right-1/4 h-full w-fit min-w-[190px] object-fill "
+          className="absolute bottom-0 right-1/4 h-full w-fit min-w-[190px] object-fill mix-blend-multiply"
           src={Haranya_portfolio_image}
           alt="Haranya portfolio image"
         />
