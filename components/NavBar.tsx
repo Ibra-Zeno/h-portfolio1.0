@@ -21,7 +21,7 @@ const NavBar: React.FC = () => {
           </Link>
         </Tooltip>
       </div>
-      <div className="p-0 font-logo text-3xl">
+      <div className="p-0 font-logo text-3xl tracking-wide">
         <Link href="/">Haranya</Link>
       </div>
       <div className="">
