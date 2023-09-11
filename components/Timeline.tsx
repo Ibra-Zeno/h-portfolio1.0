@@ -1,3 +1,198 @@
+import Link from "next/link";
+import Image from "next/image";
+import { Button } from "@nextui-org/react";
+import { urbanDesign } from "../public/images/urban_design";
+
+const Timeline: React.FC = () => {
+  return (
+    <section>
+      <div className="bg-slate-300 py-8 text-gray-800">
+        <div className="container mx-auto my-12 flex flex-col items-start md:my-24 md:flex-row">
+          <div className="sticky mt-2 flex w-full flex-col px-8 md:top-36 md:mt-12 lg:w-1/3">
+            <p className="tracking-loose ml-2 uppercase text-red-800/60">
+              Working Process
+            </p>
+            <p className="mb-2 text-3xl leading-normal md:text-4xl md:leading-relaxed">
+              The Story So Far
+            </p>
+            <p className="mb-4 text-sm text-gray-800 md:text-base">
+              Unlock your potential; it is greater than you think. Trust
+              yourself and let your abilities shine.
+            </p>
+            <Button
+              color="primary"
+              className="mx-auto rounded-sm bg-red-300 px-6 py-2"
+            >
+              Explore Now
+            </Button>
+          </div>
+          <div className="sticky ml-0 md:ml-12 lg:w-2/3">
+            <div className="container mx-auto h-full w-full">
+              <div className="wrap relative h-full overflow-hidden p-10">
+                <div
+                  className="absolute h-full border-2 border-[#0369a1]"
+                  style={{
+                    right: "50%",
+                    border: "2px solid #0369a1",
+                    borderRadius: "1%",
+                  }}
+                ></div>
+                <div
+                  className="absolute h-full border-2 border-[#0369a1]"
+                  style={{
+                    left: "50%",
+                    border: "2px solid #0369a1",
+                    borderRadius: "1%",
+                  }}
+                ></div>
+                <div className="left-timeline mb-8 flex w-full flex-row-reverse items-center justify-between">
+                  <div className="order-1 w-5/12"></div>
+                  <div className="order-1 w-5/12 px-1 py-4 text-right">
+                    <p className=" text-base text-red-800/60">
+                      London, UK 2023
+                    </p>
+                    <h6 className="mb-3 italic text-gray-600">Part Time Job</h6>
+                    <h4 className="mb-3 text-lg font-bold md:text-2xl">
+                      Optima Planning Engineering Ltd
+                    </h4>
+                    <p className="text-sm leading-snug text-gray-800 text-opacity-100 md:text-base">
+                      Success often requires faith in yourself that surpasses
+                      any doubt. Believe in your abilities, even when the path
+                      ahead seems uncertain, for it is in those moments of
+                      self-belief that you will discover your true potential.
+                    </p>
+                  </div>
+                </div>
+                <div className="right-timeline mb-8 flex w-full items-center justify-between">
+                  <div className="order-1 w-5/12"></div>
+                  <div className="order-1  w-5/12 px-1 py-4 text-left">
+                    <p className="text-base text-red-800/60">London, UK 2022</p>
+                    <h6 className="mb-3 italic text-gray-600">
+                      Work Placement
+                    </h6>
+                    <h4 className="mb-3 text-lg font-bold md:text-2xl">
+                      Optima Planning Engineering Ltd
+                    </h4>
+                    <p className="text-sm leading-snug text-gray-800 text-opacity-100 md:text-base">
+                      Dreams are the blueprints of the future. Dream big, but
+                      remember that it is the consistent and focused effort you
+                      put into realizing those dreams that will turn them into
+                      reality.
+                    </p>
+                  </div>
+                </div>
+                <div className="left-timeline mb-8 flex w-full flex-row-reverse items-center justify-between">
+                  <div className="order-1 w-5/12"></div>
+                  <div className="order-1 w-5/12 px-1 py-4 text-right">
+                    <p className=" text-base text-red-800/60">Malaysia 2020</p>
+                    <h6 className="mb-3 italic text-gray-600">
+                      Summer Internship
+                    </h6>
+                    <h4 className="mb-3 text-lg font-bold md:text-2xl">
+                      KW Associates and Architecture Sdn. Bhd.
+                    </h4>
+                    <p className="text-sm leading-snug text-gray-800 text-opacity-100 md:text-base">
+                      Life is a series of challenges and opportunities. Embrace
+                      both, for they shape your unique journey.
+                    </p>
+                  </div>
+                </div>
+                <div className="right-timeline mb-8 flex w-full items-center justify-between">
+                  <div className="order-1 w-5/12"></div>
+                  <div className="order-1  w-5/12 px-1 py-4 text-left">
+                    <p className="text-base text-red-800/60">6-9 May, 2021</p>
+                    <h6 className="mb-3 italic text-gray-600">Part Time Job</h6>
+                    <h4 className="mb-3 text-lg font-bold md:text-2xl">
+                      Participation
+                    </h4>
+                    <p className="text-sm leading-snug text-gray-800 text-opacity-100 md:text-base">
+                      Life is a series of challenges and opportunities. Embrace
+                      both, for they shape your unique journey.
+                    </p>
+                  </div>
+                </div>
+                <div className="left-timeline mb-8 flex w-full flex-row-reverse items-center justify-between">
+                  <div className="order-1 w-5/12"></div>
+                  <div className="order-1 w-5/12 px-1 py-4 text-right">
+                    <p className=" text-base text-red-800/60">
+                      London, UK 2023
+                    </p>
+                    <h6 className="mb-3 italic text-gray-600">Part Time Job</h6>
+                    <h4 className="mb-3 text-lg font-bold md:text-2xl">
+                      Optima Planning Engineering Ltd
+                    </h4>
+                    <p className="text-sm leading-snug text-gray-800 text-opacity-100 md:text-base">
+                      Success often requires faith in yourself that surpasses
+                      any doubt. Believe in your abilities, even when the path
+                      ahead seems uncertain, for it is in those moments of
+                      self-belief that you will discover your true potential.
+                    </p>
+                  </div>
+                </div>
+                <div className="right-timeline mb-8 flex w-full items-center justify-between">
+                  <div className="order-1 w-5/12"></div>
+                  <div className="order-1  w-5/12 px-1 py-4 text-left">
+                    <p className="text-base text-red-800/60">6-9 May, 2021</p>
+                    <h6 className="mb-3 italic text-gray-600">Part Time Job</h6>
+                    <h4 className="mb-3 text-lg font-bold md:text-2xl">
+                      Participation
+                    </h4>
+                    <p className="text-sm leading-snug text-gray-800 text-opacity-100 md:text-base">
+                      Life is a series of challenges and opportunities. Embrace
+                      both, for they shape your unique journey.
+                    </p>
+                  </div>
+                </div>
+                <div className="left-timeline mb-8 flex w-full flex-row-reverse items-center justify-between">
+                  <div className="order-1 w-5/12"></div>
+                  <div className="order-1 w-5/12 px-1 py-4 text-right">
+                    <p className="text-base text-red-800/60">
+                      {" "}
+                      10 May, 2021
+                      <h6 className="mb-3 italic text-gray-600">
+                        Part Time Job
+                      </h6>
+                    </p>
+                    <h4 className="mb-3 text-lg font-bold md:text-2xl">
+                      Result Declaration
+                    </h4>
+                    <p className="text-sm leading-snug text-gray-800 text-opacity-100 md:text-base">
+                      Life is a series of challenges and opportunities. Embrace
+                      both, for they shape your unique journey.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="right-timeline mb-8 flex w-full items-center justify-between">
+                  <div className="order-1 w-5/12"></div>
+
+                  <div className="order-1  w-5/12 px-1 py-4">
+                    <p className="text-base text-red-800/60">12 May, 2021</p>
+                    <h6 className="mb-3 italic text-gray-600">Part Time Job</h6>
+                    <h4 className="mb-3 text-left  text-lg font-bold md:text-2xl">
+                      SheCodes
+                    </h4>
+                    <p className="text-sm leading-snug text-gray-800 text-opacity-100 md:text-base">
+                      Life is a series of challenges and opportunities. Embrace
+                      both, for they shape your unique journey.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div
+                className="flex-start relative mx-auto flex max-h-[400px] w-[400px] justify-center p-6"
+                dangerouslySetInnerHTML={{ __html: urbanDesign }}
+              ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Timeline;
+
 /* <section>
     <div class="bg-black text-white py-8">
     <div class="container mx-auto flex flex-col items-start md:flex-row my-12 md:my-24">

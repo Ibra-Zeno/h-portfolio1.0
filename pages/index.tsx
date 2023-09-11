@@ -5,6 +5,7 @@ import About from "../components/AboutMe";
 import Carousel from "../components/Carousel";
 import Footer from "../components/Footer";
 import LogoCarousel from "../components/LogoCarousel";
+import Timeline from "../components/Timeline";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
         <Hero />
         <About />
         <LogoCarousel />
+        <Timeline />
         <Carousel />
         <Footer />
       </Layout>
