@@ -8,4 +8,7 @@
   .pause {
     animation-play-state: paused;
   }
+  .clip-path {
+    clip-path: polygon(100% 0, 100% 12%, 89% 100%, 0 100%, 0 0);
+  }
 }
