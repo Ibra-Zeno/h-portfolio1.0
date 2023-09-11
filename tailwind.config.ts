@@ -18,6 +18,16 @@ const config: Config = {
         logo: ["Montez", "cursive"],
         primary: ["Playfair Display", "serif"],
       },
+      keyframes: {
+        carousel: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-100%)" },
+        },
+        "carousel-reverse": {
+          "0%": { transform: "translateX(100%)" },
+          "100%": { transform: "translateX(0)" },
+        },
+      },
     },
   },
   plugins: [],
