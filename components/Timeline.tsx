@@ -7,12 +7,12 @@ const Timeline: React.FC = () => {
   return (
     <section>
       <div className="bg-slate-300 py-8 text-gray-800">
-        <div className="container mx-auto my-12 flex flex-col items-start md:my-24 md:flex-row">
-          <div className="sticky mt-2 flex w-full flex-col px-8 md:top-36 md:mt-12 lg:w-1/3">
-            <p className="tracking-loose ml-2 uppercase text-red-800/60">
+        <div className="mx-auto my-12 flex flex-col items-start lg:container md:my-24 md:flex-row">
+          <div className="sticky mx-auto mt-2 flex w-full max-w-[100vw] flex-col px-8 text-center md:top-36 md:mt-12 md:w-1/3 md:text-left">
+            <p className="tracking-loose text-base uppercase text-red-800/60 md:text-lg">
               Working Process
             </p>
-            <p className="mb-2 text-3xl leading-normal md:text-4xl md:leading-relaxed">
+            <p className="mb-2 text-2xl leading-normal md:text-4xl md:leading-relaxed">
               The Story So Far
             </p>
             <p className="mb-4 text-sm text-gray-800 md:text-base">
@@ -21,14 +21,14 @@ const Timeline: React.FC = () => {
             </p>
             <Button
               color="primary"
-              className="mx-auto rounded-sm bg-red-300 px-6 py-2"
+              className="mx-auto rounded-sm bg-red-300 px-6 py-2 text-base"
             >
               Explore Now
             </Button>
           </div>
-          <div className="sticky ml-0 md:ml-12 lg:w-2/3">
+          <div className="sticky mx-auto md:w-2/3">
             <div className="container mx-auto h-full w-full">
-              <div className="wrap relative h-full overflow-hidden p-10">
+              <div className="wrap relative h-full w-screen overflow-hidden px-2 py-10 sm:w-auto">
                 <div
                   className="absolute h-full border-2 border-[#0369a1]"
                   style={{
@@ -48,11 +48,13 @@ const Timeline: React.FC = () => {
                 <div className="left-timeline mb-8 flex w-full flex-row-reverse items-center justify-between">
                   <div className="order-1 w-5/12"></div>
                   <div className="order-1 w-5/12 px-1 py-4 text-right">
-                    <p className=" text-base text-red-800/60">
+                    <p className="text-sm text-red-800/60 md:text-base">
                       London, UK 2023
                     </p>
-                    <h6 className="mb-3 italic text-gray-600">Part Time Job</h6>
-                    <h4 className="mb-3 text-lg font-bold md:text-2xl">
+                    <h6 className="mb-3 text-sm italic text-gray-600 md:text-base">
+                      Part Time Job
+                    </h6>
+                    <h4 className="mb-3 text-base font-bold md:text-lg lg:text-xl xl:text-2xl">
                       Optima Planning Engineering Ltd
                     </h4>
                     <p className="text-sm leading-snug text-gray-800 text-opacity-100 md:text-base">
@@ -66,11 +68,13 @@ const Timeline: React.FC = () => {
                 <div className="right-timeline mb-8 flex w-full items-center justify-between">
                   <div className="order-1 w-5/12"></div>
                   <div className="order-1  w-5/12 px-1 py-4 text-left">
-                    <p className="text-base text-red-800/60">London, UK 2022</p>
-                    <h6 className="mb-3 italic text-gray-600">
+                    <p className="text-sm text-red-800/60 md:text-base">
+                      London, UK 2022
+                    </p>
+                    <h6 className="mb-3 text-sm italic text-gray-600 md:text-base">
                       Work Placement
                     </h6>
-                    <h4 className="mb-3 text-lg font-bold md:text-2xl">
+                    <h4 className="mb-3 text-base font-bold md:text-lg lg:text-xl xl:text-2xl">
                       Optima Planning Engineering Ltd
                     </h4>
                     <p className="text-sm leading-snug text-gray-800 text-opacity-100 md:text-base">
@@ -84,11 +88,13 @@ const Timeline: React.FC = () => {
                 <div className="left-timeline mb-8 flex w-full flex-row-reverse items-center justify-between">
                   <div className="order-1 w-5/12"></div>
                   <div className="order-1 w-5/12 px-1 py-4 text-right">
-                    <p className=" text-base text-red-800/60">Malaysia 2020</p>
-                    <h6 className="mb-3 italic text-gray-600">
+                    <p className=" text-sm text-red-800/60 md:text-base">
+                      Malaysia 2020
+                    </p>
+                    <h6 className="mb-3 text-sm italic text-gray-600 md:text-base">
                       Summer Internship
                     </h6>
-                    <h4 className="mb-3 text-lg font-bold md:text-2xl">
+                    <h4 className="mb-3 text-base font-bold md:text-lg lg:text-xl xl:text-2xl">
                       KW Associates and Architecture Sdn. Bhd.
                     </h4>
                     <p className="text-sm leading-snug text-gray-800 text-opacity-100 md:text-base">
@@ -100,9 +106,13 @@ const Timeline: React.FC = () => {
                 <div className="right-timeline mb-8 flex w-full items-center justify-between">
                   <div className="order-1 w-5/12"></div>
                   <div className="order-1  w-5/12 px-1 py-4 text-left">
-                    <p className="text-base text-red-800/60">6-9 May, 2021</p>
-                    <h6 className="mb-3 italic text-gray-600">Part Time Job</h6>
-                    <h4 className="mb-3 text-lg font-bold md:text-2xl">
+                    <p className="text-sm text-red-800/60 md:text-base">
+                      6-9 May, 2021
+                    </p>
+                    <h6 className="mb-3 text-sm italic text-gray-600 md:text-base">
+                      Part Time Job
+                    </h6>
+                    <h4 className="mb-3 text-base font-bold md:text-lg lg:text-xl xl:text-2xl">
                       Participation
                     </h4>
                     <p className="text-sm leading-snug text-gray-800 text-opacity-100 md:text-base">
@@ -114,11 +124,13 @@ const Timeline: React.FC = () => {
                 <div className="left-timeline mb-8 flex w-full flex-row-reverse items-center justify-between">
                   <div className="order-1 w-5/12"></div>
                   <div className="order-1 w-5/12 px-1 py-4 text-right">
-                    <p className=" text-base text-red-800/60">
+                    <p className=" text-sm text-red-800/60 md:text-base">
                       London, UK 2023
                     </p>
-                    <h6 className="mb-3 italic text-gray-600">Part Time Job</h6>
-                    <h4 className="mb-3 text-lg font-bold md:text-2xl">
+                    <h6 className="mb-3 text-sm italic text-gray-600 md:text-base">
+                      Part Time Job
+                    </h6>
+                    <h4 className="mb-3 text-base font-bold md:text-lg lg:text-xl xl:text-2xl">
                       Optima Planning Engineering Ltd
                     </h4>
                     <p className="text-sm leading-snug text-gray-800 text-opacity-100 md:text-base">
@@ -132,9 +144,13 @@ const Timeline: React.FC = () => {
                 <div className="right-timeline mb-8 flex w-full items-center justify-between">
                   <div className="order-1 w-5/12"></div>
                   <div className="order-1  w-5/12 px-1 py-4 text-left">
-                    <p className="text-base text-red-800/60">6-9 May, 2021</p>
-                    <h6 className="mb-3 italic text-gray-600">Part Time Job</h6>
-                    <h4 className="mb-3 text-lg font-bold md:text-2xl">
+                    <p className="text-sm text-red-800/60 md:text-base">
+                      6-9 May, 2021
+                    </p>
+                    <h6 className="mb-3 text-sm italic text-gray-600 md:text-base">
+                      Part Time Job
+                    </h6>
+                    <h4 className="mb-3 text-base font-bold md:text-lg lg:text-xl xl:text-2xl">
                       Participation
                     </h4>
                     <p className="text-sm leading-snug text-gray-800 text-opacity-100 md:text-base">
@@ -146,14 +162,14 @@ const Timeline: React.FC = () => {
                 <div className="left-timeline mb-8 flex w-full flex-row-reverse items-center justify-between">
                   <div className="order-1 w-5/12"></div>
                   <div className="order-1 w-5/12 px-1 py-4 text-right">
-                    <p className="text-base text-red-800/60">
+                    <p className="text-sm text-red-800/60 md:text-base">
                       {" "}
                       10 May, 2021
-                      <h6 className="mb-3 italic text-gray-600">
-                        Part Time Job
-                      </h6>
                     </p>
-                    <h4 className="mb-3 text-lg font-bold md:text-2xl">
+                    <h6 className="mb-3 text-sm italic text-gray-600 md:text-base">
+                      Part Time Job
+                    </h6>
+                    <h4 className="mb-3 text-base font-bold md:text-lg lg:text-xl xl:text-2xl">
                       Result Declaration
                     </h4>
                     <p className="text-sm leading-snug text-gray-800 text-opacity-100 md:text-base">
@@ -167,9 +183,13 @@ const Timeline: React.FC = () => {
                   <div className="order-1 w-5/12"></div>
 
                   <div className="order-1  w-5/12 px-1 py-4">
-                    <p className="text-base text-red-800/60">12 May, 2021</p>
-                    <h6 className="mb-3 italic text-gray-600">Part Time Job</h6>
-                    <h4 className="mb-3 text-left  text-lg font-bold md:text-2xl">
+                    <p className="text-sm text-red-800/60 md:text-base">
+                      12 May, 2021
+                    </p>
+                    <h6 className="mb-3 text-sm italic text-gray-600 md:text-base">
+                      Part Time Job
+                    </h6>
+                    <h4 className="mb-3 text-base font-bold md:text-lg lg:text-xl xl:text-2xl">
                       SheCodes
                     </h4>
                     <p className="text-sm leading-snug text-gray-800 text-opacity-100 md:text-base">
@@ -180,7 +200,7 @@ const Timeline: React.FC = () => {
                 </div>
               </div>
               <div
-                className="flex-start relative mx-auto flex max-h-[400px] w-[400px] justify-center p-6"
+                className="flex-start relative mx-auto flex max-h-[400px] w-[300px] justify-center p-6 sm:w-[400px]"
                 dangerouslySetInnerHTML={{ __html: urbanDesign }}
               ></div>
             </div>
