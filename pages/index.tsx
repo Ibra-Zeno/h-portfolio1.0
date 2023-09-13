@@ -6,6 +6,7 @@ import Carousel from "../components/Carousel";
 import Footer from "../components/Footer";
 import LogoCarousel from "../components/LogoCarousel";
 import Timeline from "../components/Timeline";
+import Gallery from "../components/Gallery";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
         <NavBar />
         <Hero />
         <About />
+        <Gallery />
         <LogoCarousel />
         <Timeline />
         <Carousel />
