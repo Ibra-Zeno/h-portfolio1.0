@@ -18,7 +18,8 @@ export const portfolioData: PortfolioDataProps = {
     name: "integrationA",
     title: "Integration",
     date: "2020-01-01",
-    description: "This is project 1",
+    description:
+      "Established a state-of-the-art composting facility serving the Reading and Purley communities, seamlessly transforming organic waste from the region into high-quality compost. Our innovative design encompasses a spacious composting center, an inviting viewing deck, a dedicated compost storage area, an educational hub, a welcoming café, versatile meeting spaces, and efficient office facilities, all harmoniously integrated into the site. The resulting compost is not only sold but also utilised on-site, closing the sustainability loop, and fostering a greener, more eco-conscious environment.",
     images: [
       "1a.jpg",
       "1b.jpg",
@@ -41,9 +42,10 @@ export const portfolioData: PortfolioDataProps = {
   internship: {
     id: 2,
     name: "internship",
-    title: "Project 2",
+    title: "Internship",
     date: "2020-01-01",
-    description: "This is project 2",
+    description:
+      "Collaborated closely with a project management company and a town planner practice to craft an extensive property extension plan. Given the client's preference for a phased approach to the project, we meticulously devised a strategy encompassing three distinct phases. In each phase, we optimised the utilisation of the spaces, ensuring they functioned seamlessly within the evolving project. To provide our client with a vivid visualization of the design, we developed a detailed SketchUp model, allowing them to envision the transformation at every stage of the project.",
     images: ["2a.jpg", "2b.jpg", "2c.jpg", "2d.jpg", "2e.jpg", "2f.jpg"],
     videos: [],
   },
@@ -58,9 +60,10 @@ export const portfolioData: PortfolioDataProps = {
   rxm: {
     id: 4,
     name: "rxm",
-    title: "Project 4",
+    title: "Reflective and Explorative Making in Architecture",
     date: "2020-01-01",
-    description: "This is project 4",
+    description:
+      "Practicing with a variety of materials, like concrete, timber, paper, and metal. A better understanding of the material properties helped create an abstract composition and this project involved experimenting with various materials like plywood, concrete, steel, wire, paper, and plaster. Inspired by nature and geological formations, aimed to create functional yet visually appealing spaces. Shapes, balance, and spatial use were crucial. Extensive material testing led me to focus on paper's flexibility and unique possibilities, influenced by artists like Veo Friis Jespersen. Wire and metal's versatility, inspired by László Moholy-Nagy, allowed for dynamic shapes and connections. Simplicity and intersecting shapes guided the design.",
     images: [
       "4a.jpg",
       "4b.jpg",
@@ -76,9 +79,10 @@ export const portfolioData: PortfolioDataProps = {
   industryAndPractice: {
     id: 5,
     name: "industryAndPractice",
-    title: "Project 5",
+    title: "Industry and Practice",
     date: "2020-01-01",
-    description: "This is project 5",
+    description:
+      "As a team we designed for our end of show architecture exhibition, our design priorities cost-effectiveness and sustainability by integrating natural ventilation to reduce energy consumption. We used three primary materials—plywood, concrete, and steel—to craft a space that invites visitors to appreciate the projects design by the students from a variety of years. \n \n These materials are thoughtfully combined to create a pathway for visitors, allowing us to gently guide their experience within the space. The exhibition aims to provide a functional and aesthetically pleasing environment where conversations can naturally unfold, and students' efforts can be celebrated. ",
     images: [
       "5a.jpg",
       "5b.jpg",
@@ -101,9 +105,10 @@ export const portfolioData: PortfolioDataProps = {
   danceStudio: {
     id: 6,
     name: "danceStudio",
-    title: "Project 6",
+    title: "Dance Studio",
     date: "2020-01-01",
-    description: "This is project 6",
+    description:
+      "Reviving an 18th Century building in Reading Borough, the Dance Reading Studio is a captivating blend of history and innovation. The design preserved the building's charming red brick exterior while adding a stunning glass dome for a modern touch, complete with solar panels for sustainability. A key part of the design is creating versatile spaces, well-equipped dance studios, and dancer-friendly flooring for safety. Large windows bring in natural light and views of the lush surroundings, enhancing the ambiance. ",
     images: [
       "6a.jpg",
       "6b.jpg",
@@ -121,12 +126,13 @@ export const portfolioData: PortfolioDataProps = {
       "6n.jpg",
     ],
   },
-  blackHistory: {
+  blackHistoryMural: {
     id: 7,
-    name: "blackHistory",
-    title: "Project 7",
+    name: "blackHistoryMural",
+    title: "Black History Mural",
     date: "2020-01-01",
-    description: "This is project 7",
+    description:
+      "Within the Central Club Building in Reading resides the iconic Black History Mural, a local treasure since its creation in June 1990. Despite facing threats since 2007, this mural remains a cherished symbol of our community's cultural richness. Our site design prioritises the safety for the four residential households, offering spaces that cater to their unique needs and promote seamless mobility. We've curated a diverse blend of public, semi-public, and private areas, including shared interior doors and a communal rooftop garden. This thoughtful design ensures accessibility for all residents, fosters community values, and embraces sustainability through solar panels, enhancing the building's financial viability.",
     images: [
       "7a.jpg",
       "7b.jpg",
@@ -146,9 +152,10 @@ export const portfolioData: PortfolioDataProps = {
   vc: {
     id: 8,
     name: "vc",
-    title: "Project 8",
+    title: "Visualisation and Communication",
     date: "2020-01-01",
-    description: "This is project 8",
+    description:
+      "This project centred around a specific house, aiming to delve deeply into various design considerations, ranging from landscaping to the glass ground floor and the intricacies of the spiral staircase. The focus was on experimenting with diverse methods of illustrating the design.",
     images: ["8a.jpg", "8b.jpg", "8c.jpg", "8d.jpg"],
   },
   cardStructure: {
@@ -157,7 +164,7 @@ export const portfolioData: PortfolioDataProps = {
     title: "Card Structure",
     date: "2020-01-01",
     description:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit accusamus eaque quasi tempore molestiae nobis possimus repellendus dolorem quaerat voluptates enim beatae ut sunt suscipit architecto, rem nulla tempora cum.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit accusamus eaque quasi tempore molestiae nobis possimus repellendus dolorem quaerat voluptates enim beatae ut sunt suscipit architecto, rem nulla tempora cum.",
+      "Our project focuses on enhancing the pathway near Reading Minster of St. Mary the Virgin, frequently used by diverse community members. We've integrated two walls into this path, cleverly merging the clock tower's checkerboard pattern with the surrounding natural elements, including an ancient nearby tree. Utilising varied square sizes (50mm by 50mm, 75mm by 75mm, and 100mm by 100mm) in a 1:5 model, alongside a larger 1:1 structure, strategically placed for pedestrian convenience. These walls gently encourage a slower pace, inviting individuals to immerse themselves in the minster's rich history. Our design aspires to rekindle appreciation for this landmark, often overshadowed by the daily urban hustle and bustle.",
     images: [
       "9a.jpg",
       "9b.jpg",
@@ -178,9 +185,10 @@ export const portfolioData: PortfolioDataProps = {
   epq: {
     id: 10,
     name: "epq",
-    title: "Project 10",
+    title: "EPQ",
     date: "2020-01-01",
-    description: "This is project 10",
+    description:
+      "As part of an Extended Project Qualification, a life-sized homeless shelter that addresses the pressing homelessness crisis was designed. The goal was to provide a mobile, temporary solution. It began with a mini prototype, testing the weight and mechanics necessary for expanding the shelter when in use and collapsing it for transportation. The mechanism successfully reduced the shelter to nearly half its original size. The primary objectives were to develop a transportable, durable, secure, and warm space, ensuring the safety and well-being of those who would rely on it.",
     images: [
       "10a.jpeg",
       "10b.jpg",

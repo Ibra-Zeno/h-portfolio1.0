@@ -118,7 +118,7 @@ const cards = [
     url: images[0],
     title: "Black History Mural",
     id: 6,
-    link: "/BlackHistoryMural",
+    link: "/blackHistoryMural",
   },
 
   {

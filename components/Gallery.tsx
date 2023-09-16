@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import NextImage from "next/image";
+import Image from "next/image";
 import { useRouter } from "next/router";
 import { Skeleton } from "@nextui-org/react";
 import { PortfolioDataProps } from "../public/assets/portfolioData";
+import { ArrowLeftCircle, ArrowRightCircle, XCircle } from "lucide-react";
 
 interface GalleryProps {
   images: string[];
@@ -62,7 +63,7 @@ const Gallery: React.FC<PortfolioDataProps> = ({ project }) => {
             isLoaded={imageLoadStates[index]}
             className="mx-12 rounded-lg"
           >
-            <NextImage
+            <Image
               src={image}
               alt={`Image ${index}`}
               className="scroll-snap-align-start mx-auto aspect-video cursor-pointer rounded-lg border border-gray-300/40 object-cover transition duration-300 ease-in-out hover:scale-105 hover:shadow-xl"
@@ -83,28 +84,27 @@ const Gallery: React.FC<PortfolioDataProps> = ({ project }) => {
           >
             <button
               onClick={prevImage}
-              className="absolute left-2 top-1/2 -translate-y-1/2 transform font-bold text-white"
+              className="absolute left-4 top-1/2 z-30 -translate-y-1/2 transform font-bold text-white"
             >
-              &larr; Prev
+              <ArrowLeftCircle className="rounded-full bg-gray-600/60" />
             </button>
-            <NextImage
+            <Image
               src={images[selectedImage]}
               alt={`Image ${selectedImage}`}
-              className="max-h-full max-w-full"
-              width={900}
-              height={900}
+              className="object-contain"
+              fill={true}
             />
             <button
               onClick={nextImage}
-              className="absolute right-2 top-1/2 -translate-y-1/2 transform font-bold text-white"
+              className="absolute right-4 top-1/2 -translate-y-1/2 transform font-bold text-white"
             >
-              Next &rarr;
+              <ArrowRightCircle className="rounded-full bg-gray-600/60" />
             </button>
             <button
               onClick={closeImage}
               className="absolute right-2 top-2 text-xl font-bold text-white"
             >
-              Close &times;
+              <XCircle className="rounded-full bg-gray-600/60" />
             </button>
           </motion.div>
         )}

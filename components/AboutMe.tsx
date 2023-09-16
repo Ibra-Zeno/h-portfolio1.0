@@ -1,5 +1,7 @@
 import { Lightbulb } from "lucide-react";
 import Image from "next/image";
+import { useState } from "react";
+import { Skeleton } from "@nextui-org/react";
 
 const features = [
   {
@@ -23,6 +25,8 @@ const features = [
 ];
 
 export default function About() {
+  const [isImageLoading, setIsImageLoading] = useState(true);
+
   return (
     <div className="overflow-hidden bg-white py-24 sm:py-32">
       <div className="mx-auto max-w-full px-6 lg:px-8">
@@ -56,16 +60,22 @@ export default function About() {
               </dl>
             </div>
           </div>
-          <Image
-            src={
-              "https://images.unsplash.com/photo-1693856758403-bba589db78dc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80"
-            }
-            alt="Product screenshot"
-            className="aspect-video w-[48rem] max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem] md:-ml-4 lg:-ml-0"
-            draggable={false}
-            width={2432}
-            height={1442}
-          />
+          <Skeleton
+            isLoaded={!isImageLoading}
+            className="overflow-visible rounded-lg"
+          >
+            <Image
+              src={
+                "https://images.unsplash.com/photo-1693856758403-bba589db78dc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80"
+              }
+              alt="Product screenshot"
+              className="aspect-video w-[48rem] max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem] md:-ml-4 lg:-ml-0"
+              draggable={false}
+              width={2432}
+              onLoad={() => setIsImageLoading(false)}
+              height={1442}
+            />
+          </Skeleton>
         </div>
       </div>
     </div>
