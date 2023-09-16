@@ -11,33 +11,15 @@ interface GalleryProps {
 
 const Gallery: React.FC<PortfolioDataProps> = ({ project }) => {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
-  const [imageLoading, setImageLoading] = useState(true);
+  const [imageLoadStates, setImageLoadStates] = useState<boolean[]>(
+    new Array(project.images.length).fill(false),
+  );
   const images = project.images.map((img: string) => {
     return `/assets/${project.name}/${img}`;
   });
   const videos = project.videos?.map((vid: string) => {
     return `/assets/${project.name}/${vid}`;
   });
-
-  useEffect(() => {
-    // Set image loading state to false when all images have loaded
-    const imageLoadPromises = images.map(
-      (image) =>
-        new Promise<void>((resolve) => {
-          const img = new Image();
-          img.src = image;
-          img.onload = (event: Event) => resolve();
-        }),
-    );
-
-    Promise.all(imageLoadPromises)
-      .then(() => {
-        setImageLoading(false);
-      })
-      .catch((error) => {
-        console.error("Error loading images:", error);
-      });
-  }, [images]);
 
   const openImage = (index: number) => {
     setSelectedImage(index);
@@ -59,6 +41,14 @@ const Gallery: React.FC<PortfolioDataProps> = ({ project }) => {
     }
   };
 
+  const handleImageLoad = (index: number) => {
+    setImageLoadStates((prevStates) => {
+      const updatedStates = [...prevStates];
+      updatedStates[index] = true;
+      return updatedStates;
+    });
+  };
+
   return (
     <div className="container p-4 md:grid md:grid-cols-2 ">
       {/* lg:grid-cols-3 xl:grid-cols-4 */}
@@ -68,19 +58,19 @@ const Gallery: React.FC<PortfolioDataProps> = ({ project }) => {
           className="my-4 w-full gap-4 p-1 "
           onClick={() => openImage(index)}
         >
-          {imageLoading ? ( // Display skeleton or loading indicator while image is loading
-            <Skeleton isLoaded={!imageLoading} className="mx-12 rounded-lg">
-              <div className="h-56"></div>
-            </Skeleton>
-          ) : (
+          <Skeleton
+            isLoaded={imageLoadStates[index]}
+            className="mx-12 rounded-lg"
+          >
             <NextImage
               src={image}
               alt={`Image ${index}`}
               className="scroll-snap-align-start mx-auto aspect-video cursor-pointer rounded-lg border border-gray-300/40 object-cover transition duration-300 ease-in-out hover:scale-105 hover:shadow-xl"
               width={400}
+              onLoad={() => handleImageLoad(index)}
               height={400}
             />
-          )}
+          </Skeleton>
         </div>
       ))}
       <AnimatePresence>

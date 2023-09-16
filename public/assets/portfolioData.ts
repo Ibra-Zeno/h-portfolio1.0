@@ -13,9 +13,9 @@ export type PortfolioDataProps = {
 };
 
 export const portfolioData: PortfolioDataProps = {
-  integration: {
+  integrationA: {
     id: 1,
-    name: "intergration",
+    name: "integrationA",
     title: "Integration",
     date: "2020-01-01",
     description: "This is project 1",

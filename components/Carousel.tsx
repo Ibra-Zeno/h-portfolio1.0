@@ -36,7 +36,7 @@ const HorizontalScrollCarousel = () => {
     target: targetRef,
   });
 
-  const x = useTransform(scrollYProgress, [0, 1], ["1%", "-50%"]);
+  const x = useTransform(scrollYProgress, [0, 1], ["1%", "-70%"]);
 
   return (
     <section ref={targetRef} className="relative h-[300vh] bg-gray-200">
@@ -67,7 +67,7 @@ const Card = ({ card }: any) => {
           className="absolute inset-0 z-0 transition-transform duration-300 group-hover:scale-110"
         ></div>
         <div className="absolute inset-0 z-10 grid place-content-center">
-          <p className="bg-gradient-to-br from-white/20 to-white/0 p-8 text-6xl font-black uppercase text-white backdrop-blur-lg">
+          <p className="bg-gradient-to-br from-white/20 to-white/0 p-8 text-xl font-black uppercase text-white backdrop-blur-lg">
             {card.title}
           </p>
         </div>
@@ -81,50 +81,62 @@ export default Carousel;
 const cards = [
   {
     url: images[0],
-    title: "Title 1",
+    title: "Integration",
     id: 1,
-    link: "/cardStructure",
+    link: "/integrationA",
   },
 
   {
     url: images[0],
-    title: "Title 2",
+    title: "Internship",
     id: 2,
-    link: "/complexity",
+    link: "/internship",
   },
 
   {
     url: images[0],
-    title: "Title 3",
+    title: "Reflective and Explorative Making in Architecture",
     id: 3,
-    link: "/cardStructure",
+    link: "/rxm",
   },
 
   {
     url: images[0],
-    title: "Title 4",
+    title: "Industry and Practice",
     id: 4,
-    link: "/cardStructure",
+    link: "/industryAndPractice",
   },
 
   {
     url: images[0],
-    title: "Title 5",
+    title: "Dance Studio",
     id: 5,
-    link: "/cardStructure",
+    link: "/danceStudio",
   },
 
   {
     url: images[0],
-    title: "Title 6",
+    title: "Black History Mural",
     id: 6,
-    link: "/cardStructure",
+    link: "/BlackHistoryMural",
   },
 
   {
     url: images[0],
-    title: "Title 7",
+    title: "Visualisation and Communication",
     id: 7,
+    link: "/vc",
+  },
+  {
+    url: images[0],
+    title: "Card Structure",
+    id: 8,
     link: "/cardStructure",
+  },
+  {
+    url: images[0],
+    title: "EPQ",
+    id: 8,
+    link: "/epq",
   },
 ];
