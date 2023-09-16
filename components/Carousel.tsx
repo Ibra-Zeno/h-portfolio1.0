@@ -6,7 +6,7 @@ const images = [
   "https://images.unsplash.com/photo-1692026172840-42b9f5688735?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxNjV8fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=500&q=60",
 ];
 import { motion, useTransform, useScroll } from "framer-motion";
-
+import Link from "next/link";
 import { useRef } from "react";
 
 const Carousel = () => {
@@ -57,22 +57,21 @@ const Card = ({ card }: any) => {
       key={card.id}
       className="group relative h-[450px] w-[450px] overflow-hidden bg-neutral-200"
     >
-      <div
-        style={{
-          backgroundImage: `url(${card.url})`,
-
-          backgroundSize: "cover",
-
-          backgroundPosition: "center",
-        }}
-        className="absolute inset-0 z-0 transition-transform duration-300 group-hover:scale-110"
-      ></div>
-
-      <div className="absolute inset-0 z-10 grid place-content-center">
-        <p className="bg-gradient-to-br from-white/20 to-white/0 p-8 text-6xl font-black uppercase text-white backdrop-blur-lg">
-          {card.title}
-        </p>
-      </div>
+      <Link href={card.link}>
+        <div
+          style={{
+            backgroundImage: `url(${card.url})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+          className="absolute inset-0 z-0 transition-transform duration-300 group-hover:scale-110"
+        ></div>
+        <div className="absolute inset-0 z-10 grid place-content-center">
+          <p className="bg-gradient-to-br from-white/20 to-white/0 p-8 text-6xl font-black uppercase text-white backdrop-blur-lg">
+            {card.title}
+          </p>
+        </div>
+      </Link>
     </div>
   );
 };
@@ -82,57 +81,50 @@ export default Carousel;
 const cards = [
   {
     url: images[0],
-
     title: "Title 1",
-
     id: 1,
+    link: "/cardStructure",
   },
 
   {
     url: images[0],
-
     title: "Title 2",
-
     id: 2,
+    link: "/complexity",
   },
 
   {
     url: images[0],
-
     title: "Title 3",
-
     id: 3,
+    link: "/cardStructure",
   },
 
   {
     url: images[0],
-
     title: "Title 4",
-
     id: 4,
+    link: "/cardStructure",
   },
 
   {
     url: images[0],
-
     title: "Title 5",
-
     id: 5,
+    link: "/cardStructure",
   },
 
   {
     url: images[0],
-
     title: "Title 6",
-
     id: 6,
+    link: "/cardStructure",
   },
 
   {
     url: images[0],
-
     title: "Title 7",
-
     id: 7,
+    link: "/cardStructure",
   },
 ];
