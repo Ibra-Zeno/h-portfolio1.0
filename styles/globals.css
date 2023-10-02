@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montez&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400;500;600;700;800;900&family=Montez&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -12,3 +12,36 @@
     clip-path: polygon(100% 0, 100% 12%, 89% 100%, 0 100%, 0 0);
   }
 }
+
+#left-contact {
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  body {
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease;
+  }
+
+  .card {
+    transition: background-color 0.3s ease;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body {
+    transition: none;
+  }
+
+  .card {
+    transition: none;
+  }
+}
+
+/* .image-masked {
+  width: 10%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  mask-image: radial-gradient(circle at top right, transparent, black);
+} */

@@ -1,6 +1,9 @@
 import { useRouter } from "next/router";
 import { portfolioData } from "../public/assets/portfolioData";
 import Gallery from "../components/Gallery";
+import Layout from "../components/Layout";
+import NavBar from "../components/NavBar";
+import Footer from "../components/Footer";
 import React, { useEffect, useState } from "react";
 import { Spinner } from "@nextui-org/react";
 
@@ -32,22 +35,27 @@ const ProjectPage: React.FC = () => {
   const projectData = portfolioData[project];
   return (
     <>
-      <section className="container relative mx-auto scroll-smooth bg-gray-300 px-2 font-primary lg:grid lg:grid-cols-3">
-        <div className="mx-auto h-min lg:sticky lg:top-36 lg:col-span-1 lg:text-center">
-          <h3 className="mb-1 text-center font-sans text-lg font-semibold text-gray-700">
-            {projectData.title}
-          </h3>
-          <p className="mb-2 text-center text-sm italic">{projectData.date}</p>
-          <p className="mb-2 text-center text-sm text-gray-700/90">
-            {projectData.description}
-          </p>
-          <div className="mx-auto h-[1px] w-[80%] bg-gray-700/40 lg:hidden"></div>
-        </div>
-
-        <div className="lg:col-span-2">
-          <Gallery project={projectData} />
-        </div>
-      </section>
+      <Layout>
+        <NavBar />
+        <section className="container relative mx-auto scroll-smooth bg-gray-300 px-2 font-primary lg:grid lg:grid-cols-3">
+          <div className="mx-auto h-min lg:sticky lg:top-36 lg:col-span-1 lg:text-center">
+            <h3 className="mb-1 text-center font-sans text-lg font-semibold text-gray-700">
+              {projectData.title}
+            </h3>
+            <p className="mb-2 text-center text-sm italic">
+              {projectData.date}
+            </p>
+            <p className="mb-2 text-center text-sm text-gray-700/90">
+              {projectData.description}
+            </p>
+            <div className="mx-auto h-[1px] w-[80%] bg-gray-700/40 lg:hidden"></div>
+          </div>
+          <div className="lg:col-span-2">
+            <Gallery project={projectData} />
+          </div>
+        </section>
+        <Footer />
+      </Layout>
     </>
   );
 };

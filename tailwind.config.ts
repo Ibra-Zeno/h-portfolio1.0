@@ -2,6 +2,8 @@ import type { Config } from "tailwindcss";
 const { nextui } = require("@nextui-org/react");
 
 const config: Config = {
+  darkMode: "class",
+  mode: "jit",
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -17,7 +19,7 @@ const config: Config = {
       },
       fontFamily: {
         logo: ["Montez", "cursive"],
-        primary: ["Playfair Display", "serif"],
+        primary: ["Frank Ruhl Libre", "serif"],
       },
       keyframes: {
         carousel: {

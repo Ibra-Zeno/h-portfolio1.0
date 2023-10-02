@@ -3,6 +3,7 @@ import Hero from "../components/Hero";
 import Layout from "../components/Layout";
 import About from "../components/AboutMe";
 import Carousel from "../components/Carousel";
+import Contact from "../components/Contact";
 import Footer from "../components/Footer";
 import LogoCarousel from "../components/LogoCarousel";
 import Timeline from "../components/Timeline";
@@ -17,6 +18,7 @@ export default function Home() {
         <LogoCarousel />
         <Timeline />
         <Carousel />
+        <Contact />
         <Footer />
       </Layout>
     </>
