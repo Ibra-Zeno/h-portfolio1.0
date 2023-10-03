@@ -25,32 +25,17 @@ const Gallery: React.FC<PortfolioDataProps> = ({ project }) => {
   });
 
   const openImage = (index: number) => {
-    setSelectedImage(index);
-  };
-  const openImagePagination = (index: number) => {
-    setCurrentImageLoading(true);
-    console.log("loading");
-    setSelectedImage(index);
-    console.log("loading1");
-  };
-  const imageLoadTemp = () => {
-    console.log("loaded");
+    setCurrentImageLoading(true); // Start loading state
+    setTimeout(() => {
+      setSelectedImage(index);
+    }, 300); // Delay setting selected image to see the transition effect
   };
 
   const closeImage = () => {
-    setSelectedImage(null);
-  };
-
-  const nextImage = () => {
-    if (selectedImage !== null && selectedImage < images.length - 1) {
-      setSelectedImage(selectedImage + 1);
-    }
-  };
-
-  const prevImage = () => {
-    if (selectedImage !== null && selectedImage > 0) {
-      setSelectedImage(selectedImage - 1);
-    }
+    setCurrentImageLoading(true); // Start loading state
+    setTimeout(() => {
+      setSelectedImage(null);
+    }, 300); // Delay setting selected image to see the transition effect
   };
 
   const handleImageLoad = (index: number) => {
@@ -59,11 +44,11 @@ const Gallery: React.FC<PortfolioDataProps> = ({ project }) => {
       updatedStates[index] = true;
       return updatedStates;
     });
+    setCurrentImageLoading(false); // End loading state when the image is loaded
   };
 
   return (
     <div className="container p-4 md:grid md:grid-cols-2 ">
-      {/* lg:grid-cols-3 xl:grid-cols-4 */}
       {images.map((image, index) => (
         <div
           key={index}
@@ -77,7 +62,7 @@ const Gallery: React.FC<PortfolioDataProps> = ({ project }) => {
             <Image
               src={image}
               alt={`Image ${index}`}
-              className="scroll-snap-align-start mx-auto aspect-video cursor-pointer rounded-lg border border-gray-300/40 object-cover transition duration-300 ease-in-out hover:scale-105 hover:shadow-xl"
+              className="scroll-snap-align-start mx-auto aspect-video cursor-pointer rounded-lg border border-gray-300/20 object-cover transition duration-300 ease-in-out hover:scale-105 hover:shadow-xl"
               width={400}
               onLoad={() => handleImageLoad(index)}
               height={400}
@@ -95,20 +80,20 @@ const Gallery: React.FC<PortfolioDataProps> = ({ project }) => {
           >
             <Spinner className="absolute left-1/2 top-1/2 z-20" />
             <div className="z-30">
-              {!currentImageLoading && (
-                <Image
-                  src={images[selectedImage]}
-                  alt={`Image ${selectedImage}`}
-                  className="object-contain"
-                  fill={true}
-                  onLoad={() => setCurrentImageLoading(false)}
-                />
-              )}
+              <Image
+                src={images[selectedImage]}
+                alt={`Image ${selectedImage}`}
+                className={`${
+                  currentImageLoading ? "opacity-0" : "opacity-100"
+                } mx-auto rounded-lg transition-opacity duration-300 ease-in-out`}
+                onLoad={() => setCurrentImageLoading(false)}
+                fill={true}
+              />
               <Pagination
                 className="absolute bottom-2 right-0 mx-auto flex w-full justify-center text-xl font-bold text-white"
                 showControls
                 total={images.length}
-                onChange={(page: number) => openImagePagination(page)}
+                onChange={(page: number) => openImage(page)}
                 initialPage={selectedImage + 1}
               />
               <button
