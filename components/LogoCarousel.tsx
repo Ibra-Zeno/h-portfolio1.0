@@ -4,7 +4,7 @@ import { Tooltip } from "@nextui-org/react";
 
 const LogoCarousel: React.FC = () => {
   return (
-    <section className="bg-white">
+    <section className="bg-[#F9F5F6] dark:bg-[#20262E]">
       <div className="group relative flex max-h-[100px] w-full flex-col justify-center overflow-x-hidden bg-transparent align-baseline">
         <div className="group-hover:pause relative flex w-[300%] animate-[carousel_35s_linear_infinite] flex-row overflow-y-hidden sm:w-[200%] sm:animate-[carousel_35s_linear_infinite] lg:w-[150%] lg:animate-[carousel_45s_linear_infinite]">
           {svgObjects.map((object, index) => (
@@ -16,7 +16,7 @@ const LogoCarousel: React.FC = () => {
               className="rounded-lg border-2 border-gray-400/10 font-primary text-sm tracking-wide"
             >
               <div
-                className="my-s-three relative mx-auto flex w-full flex-row justify-center rounded-lg p-6"
+                className="my-s-three relative mx-auto flex w-full flex-row justify-center rounded-lg p-6 opacity-95 invert dark:fill-[#E9E8E8] dark:text-[#E9E8E8] dark:opacity-100 dark:invert-0"
                 dangerouslySetInnerHTML={{ __html: object.svg }}
               ></div>
             </Tooltip>
@@ -32,7 +32,7 @@ const LogoCarousel: React.FC = () => {
               className="rounded-lg border-2 border-gray-400/10 font-primary text-sm tracking-wide"
             >
               <div
-                className="my-s-three relative mx-auto flex w-full flex-row justify-center rounded-lg p-6"
+                className="my-s-three relative mx-auto flex w-full flex-row justify-center rounded-lg p-6 opacity-95 invert dark:fill-[#E9E8E8] dark:text-[#E9E8E8] dark:opacity-100 dark:invert-0"
                 key={index}
                 dangerouslySetInnerHTML={{ __html: object.svg }}
               ></div>

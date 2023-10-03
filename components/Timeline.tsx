@@ -6,7 +6,7 @@ import { urbanDesign } from "../public/images/urban_design";
 const Timeline: React.FC = () => {
   return (
     <section>
-      <div className="bg-slate-300 py-8 text-gray-800">
+      <div className="bg-slate-300 py-8 text-gray-800 dark:bg-[#20262E]">
         <div className="mx-auto my-12 flex flex-col items-start lg:container md:my-24 md:flex-row">
           <div className="sticky mx-auto mt-2 flex w-full max-w-[100vw] flex-col px-8 text-center md:top-36 md:mt-12 md:w-1/3 md:text-left">
             <p className="tracking-loose text-sm uppercase text-red-800/60 md:text-base">

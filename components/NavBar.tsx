@@ -7,21 +7,21 @@ import { Moon, Sun } from "lucide-react";
 const NavBar: React.FC = () => {
   const { theme, toggleTheme } = useTheme();
   return (
-    <nav className="flex items-center justify-between border border-gray-500 bg-gray-300 px-6 py-3">
+    <nav className="flex items-center justify-between border border-gray-500/5 bg-gray-300 px-6 py-3 dark:bg-[#20262E]">
       <div className="">
         <Tooltip
           content={theme === "light" ? "Dark Mode" : "Light Mode"}
           placement="bottom"
           showArrow={true}
           delay={500}
-          className="rounded-lg bg-rose-100 font-primary text-sm tracking-wide text-gray-700 dark:bg-sky-900 dark:text-gray-200"
+          className="rounded-lg bg-rose-100 font-primary text-sm tracking-wide text-gray-700 dark:bg-sky-900 dark:text-[#E9E8E8]"
         >
           <button onClick={toggleTheme}>
             {theme === "light" ? <Moon /> : <Sun />}
           </button>
         </Tooltip>
       </div>
-      <div className="p-0 font-logo text-3xl tracking-wide text-gray-700 dark:text-gray-400">
+      <div className="p-0 font-logo text-3xl tracking-wide text-gray-700 dark:text-[#E9E8E8]">
         <Link href="/">Haranya</Link>
       </div>
       <div className="flex flex-row gap-x-4">
@@ -30,7 +30,7 @@ const NavBar: React.FC = () => {
           placement="bottom"
           showArrow={true}
           delay={500}
-          className="rounded-lg bg-rose-100 font-primary text-sm tracking-wide text-gray-700 dark:bg-sky-900 dark:text-gray-200"
+          className="rounded-lg bg-rose-100 font-primary text-sm tracking-wide text-gray-700 dark:bg-sky-900 dark:text-[#E9E8E8]"
         >
           <Link href="/">
             <Briefcase
@@ -44,7 +44,7 @@ const NavBar: React.FC = () => {
           placement="bottom"
           showArrow={true}
           delay={500}
-          className="rounded-lg bg-rose-100 font-primary text-sm tracking-wide text-gray-700 dark:bg-sky-900 dark:text-gray-200"
+          className="rounded-lg bg-rose-100 font-primary text-sm tracking-wide text-gray-700 dark:bg-sky-900 dark:text-[#E9E8E8]"
         >
           <Link href="/">
             <Send size={22} />

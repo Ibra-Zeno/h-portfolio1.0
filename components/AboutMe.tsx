@@ -28,28 +28,28 @@ export default function About() {
   const [isImageLoading, setIsImageLoading] = useState(true);
 
   return (
-    <div className="overflow-hidden bg-white py-24 sm:py-32">
+    <div className="overflow-hidden bg-white py-24 dark:bg-[#20262E] dark:text-[#E9E8E8] sm:py-32">
       <div className="mx-auto max-w-full px-6 lg:px-8">
         <div className="mx-auto grid grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:max-w-screen-2xl lg:grid-cols-2">
           <div className="lg:pr-8 lg:pt-4">
             <div className="lg:max-w-lg">
-              <h2 className="text-base font-semibold leading-7 text-indigo-600">
+              <h2 className="text-base font-semibold leading-7 text-indigo-600 dark:text-[#913175] ">
                 The one and only
               </h2>
-              <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+              <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900  dark:text-[#CD5888] sm:text-4xl">
                 A better workflow
               </p>
-              <p className="mt-6 text-lg leading-8 text-gray-600">
+              <p className="mt-6 text-lg leading-8 text-gray-600 dark:text-[#E9E8E8]">
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                 Maiores impedit perferendis suscipit eaque, iste dolor
                 cupiditate blanditiis ratione.
               </p>
-              <dl className="mt-10 max-w-xl space-y-8 text-base leading-7 text-gray-600 lg:max-w-none">
+              <dl className="mt-10 max-w-xl space-y-8 text-base leading-7 text-gray-600 dark:text-[#E9E8E8] lg:max-w-none">
                 {features.map((feature) => (
                   <div key={feature.name} className="relative pl-9">
-                    <dt className="inline font-semibold text-gray-900">
+                    <dt className="inline font-semibold text-gray-900 dark:text-[#CD5888] ">
                       <feature.icon
-                        className="absolute left-1 top-1 h-5 w-5 text-indigo-600"
+                        className="absolute left-1 top-1 h-5 w-5 text-indigo-600 dark:text-[#913175] "
                         aria-hidden="true"
                       />
                       {feature.name}

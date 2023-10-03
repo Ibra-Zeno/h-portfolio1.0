@@ -90,8 +90,9 @@ const Gallery: React.FC<PortfolioDataProps> = ({ project }) => {
                 fill={true}
               />
               <Pagination
-                className="absolute bottom-2 right-0 mx-auto flex w-full justify-center text-xl font-bold text-white"
+                className="absolute bottom-4 right-0 mx-auto flex w-full justify-center text-xl font-bold text-white lg:bottom-8"
                 showControls
+                size="sm"
                 total={images.length}
                 onChange={(page: number) => openImage(page)}
                 initialPage={selectedImage + 1}
