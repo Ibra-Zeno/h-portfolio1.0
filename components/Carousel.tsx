@@ -11,20 +11,21 @@ import { useRef } from "react";
 
 const Carousel = () => {
   return (
-    <div className="bg-neutral-800">
-      <div className="flex h-48 items-center justify-center">
-        <span className="font-semibold uppercase text-neutral-500">
-          Scroll down
-        </span>
+    <div className="relative w-full bg-neutral-200 dark:bg-neutral-800">
+      <div className="flex h-fit items-center justify-center">
+        <h3 className="flex py-12 text-xl md:text-2xl lg:text-3xl xl:text-4xl">
+          My Portfolio
+        </h3>
       </div>
 
-      <HorizontalScrollCarousel />
-
-      <div className="flex h-48 items-center justify-center">
-        <span className="font-semibold uppercase text-neutral-500">
-          Scroll up
-        </span>
+      <div className="hidden lg:block">
+        <HorizontalScrollCarousel />
       </div>
+      <div className="lg:hidden">
+        <MobileCarousel />
+      </div>
+
+      <div className="flex h-12 items-center justify-center"></div>
     </div>
   );
 };
@@ -36,18 +37,35 @@ const HorizontalScrollCarousel = () => {
     target: targetRef,
   });
 
-  const x = useTransform(scrollYProgress, [0, 1], ["1%", "-70%"]);
+  const x = useTransform(scrollYProgress, [0, 1], ["10%", "-70%"]);
 
   return (
-    <section ref={targetRef} className="relative h-[300vh] bg-gray-200">
-      <div className="sticky top-0 flex h-screen items-center overflow-hidden">
-        <motion.div style={{ x }} className="flex gap-4">
-          {cards.map((card) => {
-            return <Card card={card} key={card.id} />;
-          })}
-        </motion.div>
+    <>
+      <section
+        ref={targetRef}
+        className="relative bg-gray-200 lg:h-[200vh] xl:h-[300vh]"
+      >
+        <div className="sticky top-0 flex h-screen items-center overflow-hidden">
+          <motion.div style={{ x }} className="flex gap-6 xl:gap-10">
+            {cards.map((card) => {
+              return <Card card={card} key={card.id} />;
+            })}
+          </motion.div>
+        </div>
+      </section>
+    </>
+  );
+};
+
+const MobileCarousel = () => {
+  return (
+    <div className="flex flex-col items-center justify-center ">
+      <div className="mx-4 flex flex-col items-center justify-center gap-y-6 sm:grid sm:grid-cols-2 sm:gap-x-4 md:gap-x-8">
+        {cards.map((card) => {
+          return <Card card={card} key={card.id} />;
+        })}
       </div>
-    </section>
+    </div>
   );
 };
 
@@ -55,19 +73,19 @@ const Card = ({ card }: any) => {
   return (
     <div
       key={card.id}
-      className="group relative h-[450px] w-[450px] overflow-hidden bg-neutral-200"
+      className="group relative aspect-video h-[170px] w-[100%] overflow-hidden rounded-lg border-2 border-gray-800/20 bg-neutral-200 shadow-2xl md:h-[250px] lg:aspect-square lg:h-[300px] lg:w-[300px] xl:h-[420px] xl:w-[420px]"
     >
       <Link href={card.link}>
         <div
-          style={{
+          /*           style={{
             backgroundImage: `url(${card.url})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
-          }}
-          className="absolute inset-0 z-0 transition-transform duration-300 group-hover:scale-110"
+          }} */
+          className="absolute inset-0 z-0 bg-gradient-to-r from-slate-500 to-slate-800 transition-transform duration-300 group-hover:scale-110"
         ></div>
         <div className="absolute inset-0 z-10 grid place-content-center">
-          <p className="bg-gradient-to-br from-white/20 to-white/0 p-8 text-xl font-black uppercase text-white backdrop-blur-lg">
+          <p className=" p-8 text-xl font-black uppercase text-white">
             {card.title}
           </p>
         </div>

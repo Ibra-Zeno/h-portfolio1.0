@@ -2,8 +2,25 @@ import { Input, Textarea, Button } from "@nextui-org/react";
 import Link from "next/link";
 import { Building, Mail } from "lucide-react";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
 const Contact: React.FC = () => {
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
+
+  // Check the screen size when the component mounts and on window resize
+  useEffect(() => {
+    const handleResize = () => {
+      setIsSmallScreen(window.innerWidth <= 1023); // Adjust the breakpoint as needed
+    };
+
+    window.addEventListener("resize", handleResize);
+    handleResize(); // Check the screen size initially
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <section className="">
       <div className=" flex h-full flex-col md:grid md:grid-cols-2">
@@ -43,24 +60,35 @@ const Contact: React.FC = () => {
           </div>
         </div>
         <div className="md:col-span-1">
-          <form className="mx-auto flex h-full max-w-3xl flex-col justify-center gap-y-6 px-8 py-20 text-base md:order-none md:px-24">
+          <form className="mx-auto flex h-full max-w-3xl flex-col justify-center gap-y-9 px-8 py-20 text-base md:order-none md:px-24">
             <div className="flex flex-row gap-x-6">
-              <Input label="First Name" size="lg" type="first-name" />
-              <Input label="Last Name" size="lg" type="last-name" />
+              <Input
+                label="First Name"
+                size={isSmallScreen ? "sm" : "lg"} // Apply the appropriate size based on screen width
+                type="first-name"
+              />
+              <Input
+                label="Last Name"
+                size={isSmallScreen ? "sm" : "lg"} // Apply the appropriate size based on screen width
+                type="last-name"
+              />
             </div>
-            <Input type="email" label="Email" size="lg" />
+            <Input
+              type="email"
+              label="Email"
+              size={isSmallScreen ? "sm" : "lg"} // Apply the appropriate size based on screen width
+            />
             <Textarea
               label="Your Message"
-              size="lg"
+              size={isSmallScreen ? "sm" : "lg"} // Apply the appropriate size based on screen width
               labelPlacement="inside"
               type="message"
-              className=""
             />
             <Button
               type="submit"
-              size="lg"
+              size="lg" // Apply the appropriate size based on screen width
               radius="md"
-              className=" font-semibold tracking-wide"
+              className="font-semibold tracking-wide"
             >
               Submit
             </Button>
