@@ -35,7 +35,7 @@ const Gallery: React.FC<PortfolioDataProps> = ({ project }) => {
     setCurrentImageLoading(true); // Start loading state
     setTimeout(() => {
       setSelectedImage(null);
-    }, 300); // Delay setting selected image to see the transition effect
+    }, 100); // Delay setting selected image to see the transition effect
   };
 
   const handleImageLoad = (index: number) => {
@@ -48,21 +48,21 @@ const Gallery: React.FC<PortfolioDataProps> = ({ project }) => {
   };
 
   return (
-    <div className="container p-4 md:grid md:grid-cols-2 ">
-      {images.map((image, index) => (
+    <div className="container gap-x-8 p-4 md:grid md:grid-cols-2 ">
+      {images.map((image: string, index: number) => (
         <div
           key={index}
-          className="my-4 w-full gap-4 p-1 "
+          className="my-4 w-full  p-1"
           onClick={() => openImage(index)}
         >
           <Skeleton
             isLoaded={imageLoadStates[index]}
-            className="mx-12 rounded-lg"
+            className=" mx-auto aspect-video h-auto w-auto rounded-lg"
           >
             <Image
               src={image}
               alt={`Image ${index}`}
-              className="scroll-snap-align-start mx-auto aspect-video cursor-pointer rounded-lg border border-gray-300/20 object-cover transition duration-300 ease-in-out hover:scale-105 hover:shadow-xl"
+              className="mx-auto aspect-video w-full cursor-pointer snap-center rounded-lg border-2 border-gray-200/40 bg-white object-cover shadow-lg transition duration-300 ease-in hover:scale-105 hover:shadow-xl"
               width={400}
               onLoad={() => handleImageLoad(index)}
               height={400}
@@ -94,7 +94,7 @@ const Gallery: React.FC<PortfolioDataProps> = ({ project }) => {
                 showControls
                 size="sm"
                 total={images.length}
-                onChange={(page: number) => openImage(page)}
+                onChange={(page: number) => openImage(page - 1)}
                 initialPage={selectedImage + 1}
               />
               <button

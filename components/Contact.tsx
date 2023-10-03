@@ -26,7 +26,7 @@ const Contact: React.FC = () => {
       <div className=" flex h-full flex-col md:grid md:grid-cols-2">
         <div
           id="left-contact"
-          className="relative aspect-square h-full w-full bg-gradient-to-tr from-blue-900 to-transparent  md:col-span-1"
+          className="from-lightBg dark:from-darkBg relative aspect-square h-full w-full bg-gradient-to-tr to-transparent  md:col-span-1"
         >
           <Image
             src="/images/Hexagon.svg"
@@ -35,7 +35,7 @@ const Contact: React.FC = () => {
             className="absolute inset-0 -z-0 object-cover opacity-30"
           />
 
-          <div className=" relative z-10 flex  h-full  w-full flex-col justify-center bg-gradient-to-tr from-sky-900 via-sky-900 to-transparent px-8 py-20 ">
+          <div className=" from-lightBg via-lightBg dark:from-darkBg  dark:via-darkBg  relative z-10 flex h-full w-full flex-col justify-center bg-gradient-to-tr to-transparent px-8 py-20 ">
             <div className="mx-auto lg:w-4/5 xl:w-3/5">
               <h3 className="mb-4 text-xl font-semibold md:text-3xl lg:text-4xl">
                 Get in touch
@@ -65,11 +65,39 @@ const Contact: React.FC = () => {
               <Input
                 label="First Name"
                 size={isSmallScreen ? "sm" : "lg"} // Apply the appropriate size based on screen width
+                classNames={{
+                  inputWrapper: [
+                    "shadow-xl",
+                    "bg-default-200/50",
+                    "dark:bg-default/60",
+                    "backdrop-blur-xl",
+                    "backdrop-saturate-200",
+                    "hover:bg-default-200/70",
+                    "dark:hover:bg-default/70",
+                    "group-data-[focused=true]:bg-default-200/50",
+                    "dark:group-data-[focused=true]:bg-default/60",
+                    "!cursor-text",
+                  ],
+                }}
                 type="first-name"
               />
               <Input
                 label="Last Name"
                 size={isSmallScreen ? "sm" : "lg"} // Apply the appropriate size based on screen width
+                classNames={{
+                  inputWrapper: [
+                    "shadow-xl",
+                    "bg-default-200/50",
+                    "dark:bg-default/60",
+                    "backdrop-blur-xl",
+                    "backdrop-saturate-200",
+                    "hover:bg-default-200/70",
+                    "dark:hover:bg-default/70",
+                    "group-data-[focused=true]:bg-default-200/50",
+                    "dark:group-data-[focused=true]:bg-default/60",
+                    "!cursor-text",
+                  ],
+                }}
                 type="last-name"
               />
             </div>
@@ -77,10 +105,38 @@ const Contact: React.FC = () => {
               type="email"
               label="Email"
               size={isSmallScreen ? "sm" : "lg"} // Apply the appropriate size based on screen width
+              classNames={{
+                inputWrapper: [
+                  "shadow-xl",
+                  "bg-default-200/50",
+                  "dark:bg-default/60",
+                  "backdrop-blur-xl",
+                  "backdrop-saturate-200",
+                  "hover:bg-default-200/70",
+                  "dark:hover:bg-default/70",
+                  "group-data-[focused=true]:bg-default-200/50",
+                  "dark:group-data-[focused=true]:bg-default/60",
+                  "!cursor-text",
+                ],
+              }}
             />
             <Textarea
               label="Your Message"
               size={isSmallScreen ? "sm" : "lg"} // Apply the appropriate size based on screen width
+              classNames={{
+                inputWrapper: [
+                  "shadow-xl",
+                  "bg-default-200/50",
+                  "dark:bg-default/60",
+                  "backdrop-blur-xl",
+                  "backdrop-saturate-200",
+                  "hover:bg-default-200/70",
+                  "dark:hover:bg-default/70",
+                  "group-data-[focused=true]:bg-default-200/50",
+                  "dark:group-data-[focused=true]:bg-default/60",
+                  "!cursor-text",
+                ],
+              }}
               labelPlacement="inside"
               type="message"
             />

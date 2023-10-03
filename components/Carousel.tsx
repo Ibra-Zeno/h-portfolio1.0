@@ -11,7 +11,7 @@ import { useRef } from "react";
 
 const Carousel = () => {
   return (
-    <div className="relative w-full bg-neutral-200 dark:bg-neutral-800">
+    <div className="bg-lightBg dark:bg-darkBg relative w-full">
       <div className="flex h-fit items-center justify-center">
         <h3 className="flex py-12 text-xl md:text-2xl lg:text-3xl xl:text-4xl">
           My Portfolio
@@ -43,7 +43,7 @@ const HorizontalScrollCarousel = () => {
     <>
       <section
         ref={targetRef}
-        className="relative bg-gray-200 lg:h-[200vh] xl:h-[300vh]"
+        className="bg-lightBg dark:bg-darkBg relative lg:h-[200vh] xl:h-[300vh]"
       >
         <div className="sticky top-0 flex h-screen items-center overflow-hidden">
           <motion.div style={{ x }} className="flex gap-6 xl:gap-10">
