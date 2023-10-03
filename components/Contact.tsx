@@ -35,7 +35,7 @@ const Contact: React.FC = () => {
             className="absolute inset-0 -z-0 object-cover opacity-30"
           />
 
-          <div className=" from-lightBg via-lightBg dark:from-darkBg  dark:via-darkBg  relative z-10 flex h-full w-full flex-col justify-center bg-gradient-to-tr to-transparent px-8 py-20 ">
+          <div className=" from-lightBg via-lightBg dark:from-darkBg  dark:via-darkBg  relative z-10 flex h-full w-full flex-col justify-center bg-gradient-to-bl to-transparent px-8 py-20 ">
             <div className="mx-auto lg:w-4/5 xl:w-3/5">
               <h3 className="mb-4 text-xl font-semibold md:text-3xl lg:text-4xl">
                 Get in touch
