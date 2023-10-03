@@ -85,7 +85,7 @@ const Gallery: React.FC<PortfolioDataProps> = ({ project }) => {
                 alt={`Image ${selectedImage}`}
                 className={`${
                   currentImageLoading ? "opacity-0" : "opacity-100"
-                } mx-auto rounded-lg transition-opacity duration-300 ease-in-out`}
+                } mx-auto rounded-lg object-contain transition-opacity duration-300 ease-in-out`}
                 onLoad={() => setCurrentImageLoading(false)}
                 fill={true}
               />
