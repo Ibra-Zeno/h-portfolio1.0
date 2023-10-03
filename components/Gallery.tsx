@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { useRouter } from "next/router";
-import { Skeleton } from "@nextui-org/react";
+import { Pagination, Spinner, Skeleton } from "@nextui-org/react";
 import { PortfolioDataProps } from "../public/assets/portfolioData";
 import { ArrowLeftCircle, ArrowRightCircle, XCircle } from "lucide-react";
 
@@ -12,6 +11,9 @@ interface GalleryProps {
 
 const Gallery: React.FC<PortfolioDataProps> = ({ project }) => {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
+  const [imageLoading, setImageLoading] = useState<boolean>(false);
+  const [currentImageLoading, setCurrentImageLoading] =
+    useState<boolean>(false);
   const [imageLoadStates, setImageLoadStates] = useState<boolean[]>(
     new Array(project.images.length).fill(false),
   );
@@ -24,6 +26,15 @@ const Gallery: React.FC<PortfolioDataProps> = ({ project }) => {
 
   const openImage = (index: number) => {
     setSelectedImage(index);
+  };
+  const openImagePagination = (index: number) => {
+    setCurrentImageLoading(true);
+    console.log("loading");
+    setSelectedImage(index);
+    console.log("loading1");
+  };
+  const imageLoadTemp = () => {
+    console.log("loaded");
   };
 
   const closeImage = () => {
@@ -82,30 +93,31 @@ const Gallery: React.FC<PortfolioDataProps> = ({ project }) => {
             exit={{ opacity: 0 }}
             className="fixed inset-0 z-20 flex items-center justify-center bg-black"
           >
-            <button
-              onClick={prevImage}
-              className="absolute left-4 top-1/2 z-30 -translate-y-1/2 transform font-bold text-white"
-            >
-              <ArrowLeftCircle className="rounded-full bg-gray-600/60" />
-            </button>
-            <Image
-              src={images[selectedImage]}
-              alt={`Image ${selectedImage}`}
-              className="object-contain"
-              fill={true}
-            />
-            <button
-              onClick={nextImage}
-              className="absolute right-4 top-1/2 -translate-y-1/2 transform font-bold text-white"
-            >
-              <ArrowRightCircle className="rounded-full bg-gray-600/60" />
-            </button>
-            <button
-              onClick={closeImage}
-              className="absolute right-2 top-2 text-xl font-bold text-white"
-            >
-              <XCircle className="rounded-full bg-gray-600/60" />
-            </button>
+            <Spinner className="absolute left-1/2 top-1/2 z-20" />
+            <div className="z-30">
+              {!currentImageLoading && (
+                <Image
+                  src={images[selectedImage]}
+                  alt={`Image ${selectedImage}`}
+                  className="object-contain"
+                  fill={true}
+                  onLoad={() => setCurrentImageLoading(false)}
+                />
+              )}
+              <Pagination
+                className="absolute bottom-2 right-0 mx-auto flex w-full justify-center text-xl font-bold text-white"
+                showControls
+                total={images.length}
+                onChange={(page: number) => openImagePagination(page)}
+                initialPage={selectedImage + 1}
+              />
+              <button
+                onClick={closeImage}
+                className="absolute right-2 top-2 text-xl font-bold text-white"
+              >
+                <XCircle className="rounded-full bg-gray-600/60" />
+              </button>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

@@ -9,34 +9,36 @@ const Contact: React.FC = () => {
       <div className=" flex h-full flex-col md:grid md:grid-cols-2">
         <div
           id="left-contact"
-          className="relative  h-full w-full bg-gradient-to-tr from-blue-900 to-transparent  md:col-span-1"
+          className="relative aspect-square h-full w-full bg-gradient-to-tr from-blue-900 to-transparent  md:col-span-1"
         >
           <Image
             src="/images/Hexagon.svg"
             layout="fill"
             alt="Descriptive Image Text"
-            className="relative -z-0 object-cover opacity-30"
+            className="absolute inset-0 -z-0 object-cover opacity-30"
           />
 
-          <div className="absolute inset-0 z-10 flex h-full w-full flex-col justify-center bg-gradient-to-tr from-sky-900 via-sky-900 to-transparent px-8 py-20 lg:px-64">
-            <h3 className="mb-4 text-xl font-semibold md:text-3xl lg:text-4xl">
-              Get in touch
-            </h3>
-            <p className="mb-14 text-lg">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa nam
-              ad fugit quasi sint eius harum iure. Dolorum iusto iure neque illo
-              molestias totam, ea fugit, ipsam, rem rerum nulla?
-            </p>
-            <div className="flex flex-col gap-y-3">
-              <div className="flex flex-row gap-x-3 font-medium">
-                <Building />
-                <p>London, UK</p>
+          <div className=" relative z-10 flex  h-full  w-full flex-col justify-center bg-gradient-to-tr from-sky-900 via-sky-900 to-transparent px-8 py-20 ">
+            <div className="mx-auto lg:w-4/5 xl:w-3/5">
+              <h3 className="mb-4 text-xl font-semibold md:text-3xl lg:text-4xl">
+                Get in touch
+              </h3>
+              <p className="mb-14 text-lg">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa
+                nam ad fugit quasi sint eius harum iure. Dolorum iusto iure
+                neque illo molestias totam, ea fugit, ipsam, rem rerum nulla?
+              </p>
+              <div className="flex flex-col gap-y-3">
+                <div className="flex flex-row gap-x-3 font-medium">
+                  <Building />
+                  <p>London, UK</p>
+                </div>
+                <div className="flex flex-row gap-x-3 font-medium">
+                  <Mail />
+                  <Link href="mailto:example@test.com">example@test.com</Link>
+                </div>
+                <div></div>
               </div>
-              <div className="flex flex-row gap-x-3 font-medium">
-                <Mail />
-                <Link href="mailto:example@test.com">example@test.com</Link>
-              </div>
-              <div></div>
             </div>
           </div>
         </div>
