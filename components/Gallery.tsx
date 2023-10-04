@@ -11,12 +11,13 @@ interface GalleryProps {
 
 const Gallery: React.FC<PortfolioDataProps> = ({ project }) => {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
-  const [imageLoading, setImageLoading] = useState<boolean>(false);
+
   const [currentImageLoading, setCurrentImageLoading] =
     useState<boolean>(false);
   const [imageLoadStates, setImageLoadStates] = useState<boolean[]>(
     new Array(project.images.length).fill(false),
   );
+
   const images = project.images.map((img: string) => {
     return `/assets/${project.name}/${img}`;
   });
@@ -87,7 +88,7 @@ const Gallery: React.FC<PortfolioDataProps> = ({ project }) => {
                 alt={`Image ${selectedImage}`}
                 className={`${
                   currentImageLoading ? "opacity-0" : "opacity-100"
-                } mx-auto rounded-lg object-contain transition-opacity duration-300 ease-in-out`}
+                } duration-20000 mx-auto rounded-lg object-contain transition-opacity ease-in-out`}
                 onLoad={() => setCurrentImageLoading(false)}
                 fill={true}
               />
@@ -101,9 +102,9 @@ const Gallery: React.FC<PortfolioDataProps> = ({ project }) => {
               />
               <button
                 onClick={closeImage}
-                className="absolute right-2 top-2 text-xl font-bold text-white"
+                className="absolute right-[1vw] top-4 text-xl font-bold text-white"
               >
-                <XCircle className="rounded-full bg-gray-600/60" />
+                <XCircle className="h-8 w-8 rounded-full text-light2 dark:text-dark2" />
               </button>
             </div>
           </motion.div>

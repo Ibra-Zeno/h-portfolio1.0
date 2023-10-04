@@ -28,28 +28,28 @@ export default function About() {
   const [isImageLoading, setIsImageLoading] = useState(true);
 
   return (
-    <div className="dark:bg-darkBg dark:text-dark1 bg-lightBg text-lightText overflow-hidden py-24 sm:py-32">
+    <div className="overflow-hidden bg-lightBg py-24 text-lightText dark:bg-darkBg dark:text-dark1 sm:py-32">
       <div className="mx-auto max-w-full px-6 lg:px-8">
         <div className="mx-auto grid grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:max-w-screen-2xl lg:grid-cols-2">
           <div className="lg:pr-8 lg:pt-4">
             <div className="lg:max-w-lg">
-              <h2 className="dark:text-dark3 text-light4 text-base font-semibold leading-7 ">
+              <h2 className="text-base font-semibold leading-7 text-light2 dark:text-dark3 ">
                 The one and only
               </h2>
-              <p className="dark:text-dark2 text-lightText mt-2 text-3xl font-bold  tracking-tight sm:text-4xl">
+              <p className="mt-2 text-3xl font-bold tracking-tight text-lightText  dark:text-dark2 sm:text-4xl">
                 A better workflow
               </p>
-              <p className="dark:text-dark1 text-lightText mt-6 text-lg leading-8">
+              <p className="mt-6 text-lg leading-8 text-lightText dark:text-dark1">
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                 Maiores impedit perferendis suscipit eaque, iste dolor
                 cupiditate blanditiis ratione.
               </p>
-              <dl className="dark:text-dark1 text-lightText mt-10 max-w-xl space-y-8 text-base leading-7 lg:max-w-none">
+              <dl className="mt-10 max-w-xl space-y-8 text-base leading-7 text-lightText dark:text-dark1 lg:max-w-none">
                 {features.map((feature) => (
                   <div key={feature.name} className="relative pl-9">
-                    <dt className="dark:text-dark2 text-light3 inline font-semibold ">
+                    <dt className="inline font-semibold text-light2 dark:text-dark2 ">
                       <feature.icon
-                        className="dark:text-dark3 text-light4 absolute left-1 top-1 h-5 w-5 "
+                        className="absolute left-1 top-1 h-5 w-5 text-light1 dark:text-dark3 "
                         aria-hidden="true"
                       />
                       {feature.name}

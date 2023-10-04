@@ -6,22 +6,22 @@ import { urbanDesign } from "../public/images/urban_design";
 const Timeline: React.FC = () => {
   return (
     <section>
-      <div className="bg-lightBg dark:bg-darkBg dark:text-dark1 text-lightText py-8">
+      <div className="bg-lightBg py-8 text-lightText dark:bg-darkBg dark:text-dark1">
         <div className="mx-auto my-12 flex flex-col items-start lg:container md:my-24 md:flex-row">
           <div className="sticky mx-auto mt-2 flex w-full max-w-[100vw] flex-col px-8 text-center md:top-36 md:mt-12 md:w-1/3 md:text-left">
-            <p className="tracking-loose dark:text-dark2 text-light4 text-sm uppercase md:text-base">
+            <p className="tracking-loose text-sm uppercase text-light1 dark:text-dark2 md:text-base">
               Working Process
             </p>
             <p className="mb-2 text-2xl leading-normal md:text-4xl md:leading-relaxed">
               The Story So Far
             </p>
-            <p className="dark:text-dark1 text-lightText mb-4 text-sm md:text-base">
+            <p className="mb-4 text-sm text-lightText dark:text-dark1 md:text-base">
               Unlock your potential; it is greater than you think. Trust
               yourself and let your abilities shine.
             </p>
             <Button
               color="primary"
-              className="bg-light3 dark:bg-dark3 text-lightText dark:text-dark1 mx-auto mt-3 w-fit rounded-sm px-6 py-2 text-base md:mx-0"
+              className="mx-auto mt-3 w-fit rounded-sm bg-light2 px-6 py-2 text-base text-lightText dark:bg-dark3 dark:text-dark1 md:mx-0"
             >
               Explore Now
             </Button>
@@ -29,12 +29,12 @@ const Timeline: React.FC = () => {
           <div className="sticky mx-auto md:w-2/3">
             <div className="container mx-auto h-full w-full">
               <div className="wrap relative h-full w-screen overflow-hidden px-2 py-10 sm:w-auto">
-                <div className="border-light3 dark:border-dark3 absolute right-1/2 h-full translate-x-[1px] rounded-full border-2"></div>
-                <div className="border-light3 dark:border-dark3 absolute left-1/2 h-full -translate-x-[1px] rounded-full border-2"></div>
+                <div className="absolute right-1/2 h-full translate-x-[1px] rounded-full border-2 border-light3 dark:border-dark3"></div>
+                <div className="absolute left-1/2 h-full -translate-x-[1px] rounded-full border-2 border-light3 dark:border-dark3"></div>
                 <div className="left-timeline mb-8 flex w-full flex-row-reverse items-center justify-between">
                   <div className="order-1 w-[45%]"></div>
                   <div className="order-1 w-[45%] px-1 py-4 text-right">
-                    <p className="dark:text-dark2 text-light4 text-sm md:text-base">
+                    <p className="text-sm text-light1 dark:text-dark2 md:text-base">
                       London, UK 2023
                     </p>
                     <h6 className="mb-3 text-sm italic text-gray-600 md:text-base">
@@ -43,7 +43,7 @@ const Timeline: React.FC = () => {
                     <h4 className="mb-3 text-base font-bold md:text-lg lg:text-xl xl:text-2xl">
                       Optima Planning Engineering Ltd
                     </h4>
-                    <p className="dark:text-dark1 text-lightText text-xs leading-snug text-opacity-100 md:text-sm">
+                    <p className="text-xs leading-snug text-lightText text-opacity-100 dark:text-dark1 md:text-sm">
                       Success often requires faith in yourself that surpasses
                       any doubt. Believe in your abilities, even when the path
                       ahead seems uncertain, for it is in those moments of
@@ -54,7 +54,7 @@ const Timeline: React.FC = () => {
                 <div className="right-timeline mb-8 flex w-full items-center justify-between">
                   <div className="order-1 w-[45%]"></div>
                   <div className="order-1  w-[45%] px-1 py-4 text-left">
-                    <p className="dark:text-dark2 text-light4 text-sm md:text-base">
+                    <p className="text-sm text-light1 dark:text-dark2 md:text-base">
                       London, UK 2022
                     </p>
                     <h6 className="mb-3 text-sm italic text-gray-600 md:text-base">
@@ -63,7 +63,7 @@ const Timeline: React.FC = () => {
                     <h4 className="mb-3 text-base font-bold md:text-lg lg:text-xl xl:text-2xl">
                       Optima Planning Engineering Ltd
                     </h4>
-                    <p className="dark:text-dark1 text-lightText text-xs leading-snug text-opacity-100 md:text-sm">
+                    <p className="text-xs leading-snug text-lightText text-opacity-100 dark:text-dark1 md:text-sm">
                       Dreams are the blueprints of the future. Dream big, but
                       remember that it is the consistent and focused effort you
                       put into realizing those dreams that will turn them into
@@ -74,7 +74,7 @@ const Timeline: React.FC = () => {
                 <div className="left-timeline mb-8 flex w-full flex-row-reverse items-center justify-between">
                   <div className="order-1 w-[45%]"></div>
                   <div className="order-1 w-[45%] px-1 py-4 text-right">
-                    <p className=" dark:text-dark2 text-light4 text-sm md:text-base">
+                    <p className=" text-sm text-light1 dark:text-dark2 md:text-base">
                       Malaysia 2020
                     </p>
                     <h6 className="mb-3 text-sm italic text-gray-600 md:text-base">
@@ -83,7 +83,7 @@ const Timeline: React.FC = () => {
                     <h4 className="mb-3 text-base font-bold md:text-lg lg:text-xl xl:text-2xl">
                       KW Associates and Architecture Sdn. Bhd.
                     </h4>
-                    <p className="dark:text-dark1 text-lightText text-xs leading-snug text-opacity-100 md:text-sm">
+                    <p className="text-xs leading-snug text-lightText text-opacity-100 dark:text-dark1 md:text-sm">
                       Life is a series of challenges and opportunities. Embrace
                       both, for they shape your unique journey.
                     </p>
@@ -92,7 +92,7 @@ const Timeline: React.FC = () => {
                 <div className="right-timeline mb-8 flex w-full items-center justify-between">
                   <div className="order-1 w-[45%]"></div>
                   <div className="order-1  w-[45%] px-1 py-4 text-left">
-                    <p className="dark:text-dark2 text-light4 text-sm md:text-base">
+                    <p className="text-sm text-light1 dark:text-dark2 md:text-base">
                       6-9 May, 2021
                     </p>
                     <h6 className="mb-3 text-sm italic text-gray-600 md:text-base">
@@ -101,7 +101,7 @@ const Timeline: React.FC = () => {
                     <h4 className="mb-3 text-base font-bold md:text-lg lg:text-xl xl:text-2xl">
                       Participation
                     </h4>
-                    <p className="dark:text-dark1 text-lightText text-xs leading-snug text-opacity-100 md:text-sm">
+                    <p className="text-xs leading-snug text-lightText text-opacity-100 dark:text-dark1 md:text-sm">
                       Life is a series of challenges and opportunities. Embrace
                       both, for they shape your unique journey.
                     </p>
@@ -110,7 +110,7 @@ const Timeline: React.FC = () => {
                 <div className="left-timeline mb-8 flex w-full flex-row-reverse items-center justify-between">
                   <div className="order-1 w-[45%]"></div>
                   <div className="order-1 w-[45%] px-1 py-4 text-right">
-                    <p className=" dark:text-dark2 text-light4 text-sm md:text-base">
+                    <p className=" text-sm text-light1 dark:text-dark2 md:text-base">
                       London, UK 2023
                     </p>
                     <h6 className="mb-3 text-sm italic text-gray-600 md:text-base">
@@ -119,7 +119,7 @@ const Timeline: React.FC = () => {
                     <h4 className="mb-3 text-base font-bold md:text-lg lg:text-xl xl:text-2xl">
                       Optima Planning Engineering Ltd
                     </h4>
-                    <p className="dark:text-dark1 text-lightText text-xs leading-snug text-opacity-100 md:text-sm">
+                    <p className="text-xs leading-snug text-lightText text-opacity-100 dark:text-dark1 md:text-sm">
                       Success often requires faith in yourself that surpasses
                       any doubt. Believe in your abilities, even when the path
                       ahead seems uncertain, for it is in those moments of
@@ -130,7 +130,7 @@ const Timeline: React.FC = () => {
                 <div className="right-timeline mb-8 flex w-full items-center justify-between">
                   <div className="order-1 w-[45%]"></div>
                   <div className="order-1  w-[45%] px-1 py-4 text-left">
-                    <p className="dark:text-dark2 text-light4 text-sm md:text-base">
+                    <p className="text-sm text-light1 dark:text-dark2 md:text-base">
                       6-9 May, 2021
                     </p>
                     <h6 className="mb-3 text-sm italic text-gray-600 md:text-base">
@@ -139,7 +139,7 @@ const Timeline: React.FC = () => {
                     <h4 className="mb-3 text-base font-bold md:text-lg lg:text-xl xl:text-2xl">
                       Participation
                     </h4>
-                    <p className="dark:text-dark1 text-lightText text-xs leading-snug text-opacity-100 md:text-sm">
+                    <p className="text-xs leading-snug text-lightText text-opacity-100 dark:text-dark1 md:text-sm">
                       Life is a series of challenges and opportunities. Embrace
                       both, for they shape your unique journey.
                     </p>
@@ -148,7 +148,7 @@ const Timeline: React.FC = () => {
                 <div className="left-timeline mb-8 flex w-full flex-row-reverse items-center justify-between">
                   <div className="order-1 w-[45%]"></div>
                   <div className="order-1 w-[45%] px-1 py-4 text-right">
-                    <p className="dark:text-dark2 text-light4 text-sm md:text-base">
+                    <p className="text-sm text-light1 dark:text-dark2 md:text-base">
                       10 May, 2021
                     </p>
                     <h6 className="mb-3 text-sm italic text-gray-600 md:text-base">
@@ -157,7 +157,7 @@ const Timeline: React.FC = () => {
                     <h4 className="mb-3 text-base font-bold md:text-lg lg:text-xl xl:text-2xl">
                       Result Declaration
                     </h4>
-                    <p className="dark:text-dark1 text-lightText text-xs leading-snug text-opacity-100 md:text-sm">
+                    <p className="text-xs leading-snug text-lightText text-opacity-100 dark:text-dark1 md:text-sm">
                       Life is a series of challenges and opportunities. Embrace
                       both, for they shape your unique journey.
                     </p>
@@ -168,7 +168,7 @@ const Timeline: React.FC = () => {
                   <div className="order-1 w-[45%]"></div>
 
                   <div className="order-1  w-[45%] px-1 py-4">
-                    <p className="dark:text-dark2 text-light4 text-sm md:text-base">
+                    <p className="text-sm text-light1 dark:text-dark2 md:text-base">
                       12 May, 2021
                     </p>
                     <h6 className="mb-3 text-sm italic text-gray-600 md:text-base">
@@ -177,7 +177,7 @@ const Timeline: React.FC = () => {
                     <h4 className="mb-3 text-base font-bold md:text-lg lg:text-xl xl:text-2xl">
                       SheCodes
                     </h4>
-                    <p className="dark:text-dark1 text-lightText text-xs leading-snug text-opacity-100 md:text-sm">
+                    <p className="text-xs leading-snug text-lightText text-opacity-100 dark:text-dark1 md:text-sm">
                       Life is a series of challenges and opportunities. Embrace
                       both, for they shape your unique journey.
                     </p>
