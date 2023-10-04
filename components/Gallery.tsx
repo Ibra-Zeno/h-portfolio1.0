@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { wrap } from "popmotion";
-import { Pagination, Skeleton } from "@nextui-org/react";
-import { ArrowLeftCircle, ArrowRightCircle, XCircle } from "lucide-react";
+import { Pagination, Skeleton, Spinner } from "@nextui-org/react";
+import { XCircle } from "lucide-react";
 import Image from "next/image";
 
 interface GalleryProps {
@@ -104,7 +104,8 @@ const Gallery: React.FC<GalleryProps> = ({ project }) => {
       <AnimatePresence initial={false} custom={direction}>
         {selectedImage !== null && (
           <>
-            <div className="fixed inset-0 z-20 flex items-center justify-center bg-black">
+            <div className="fixed inset-0 z-10 flex items-center justify-center bg-black">
+              <Spinner className="absolute left-1/2 top-1/2 z-0" />
               <motion.div
                 key={selectedImage}
                 custom={direction}
