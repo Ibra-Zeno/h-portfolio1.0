@@ -6,7 +6,7 @@ import { Button } from "@nextui-org/react";
 const Hero: React.FC = () => {
   return (
     <div className="">
-      <div className=" from-lightBg to-light1 dark:from-darkBg dark:to-dark4 bg-gradient-to-t">
+      <div className=" bg-gradient-to-t from-lightBg to-light1 dark:from-darkBg dark:to-dark4">
         {/* md:clip-path */}
         <div className="mx-auto px-4 py-16 sm:max-w-xl md:max-w-full md:px-24 lg:max-w-screen-xl lg:px-8 lg:py-6">
           <div className="max-w-xl sm:mx-auto lg:max-w-2xl">
@@ -22,10 +22,10 @@ const Hero: React.FC = () => {
                 ></Image>
               </div>
               <div className="mb-10 max-w-xl sm:text-center md:mx-auto md:mb-12 lg:max-w-2xl">
-                <h2 className="text-lightText dark:text-dark1 mb-6 max-w-lg font-sans text-3xl font-bold leading-none tracking-tight sm:text-4xl md:mx-auto">
-                  Hello, my my little stalker!
+                <h2 className="mb-6 max-w-lg font-sans text-3xl font-bold leading-none tracking-tight text-lightText dark:text-dark1 sm:text-4xl md:mx-auto">
+                  Hello, my little stalker!
                 </h2>
-                <p className="text-lightText dark:text-dark1 max-w-prose text-base md:text-lg">
+                <p className="max-w-prose text-base text-lightText dark:text-dark1 md:text-lg">
                   The colours are due to change (especially the background on
                   your picture), but is the picture size better for you?
                 </p>
@@ -33,7 +33,7 @@ const Hero: React.FC = () => {
               <div className="flex justify-center">
                 <Button
                   color="primary"
-                  className="bg-light3 dark:bg-dark3 mx-auto rounded-sm px-6 py-2"
+                  className="mx-auto rounded-sm bg-light3 px-6 py-2 dark:bg-dark3"
                 >
                   <Link href="/">Portfolio</Link>
                 </Button>

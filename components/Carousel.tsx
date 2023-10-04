@@ -9,6 +9,12 @@ import { motion, useTransform, useScroll } from "framer-motion";
 import Router from "next/router";
 import { useRef } from "react";
 
+interface CardData {
+  id: number;
+  title: string;
+  link: string;
+}
+
 const Carousel = () => {
   return (
     <div className="relative w-full bg-lightBg dark:bg-darkBg">
@@ -39,6 +45,11 @@ const HorizontalScrollCarousel = () => {
 
   const x = useTransform(scrollYProgress, [0, 1], ["10%", "-70%"]);
 
+  // Divide 'cards' into two arrays for two rows
+  const middleIndex = Math.ceil(cards.length / 2);
+  const firstRow = cards.slice(0, middleIndex);
+  const secondRow = cards.slice(middleIndex);
+
   return (
     <>
       <section
@@ -46,17 +57,36 @@ const HorizontalScrollCarousel = () => {
         id="portfolio"
         className="relative bg-lightBg dark:bg-darkBg lg:h-[200vh] xl:h-[300vh]"
       >
-        <div className="sticky top-0 flex h-screen items-center overflow-hidden">
-          <motion.div style={{ x }} className="flex gap-6 xl:gap-10">
-            {cards.map((card) => {
-              return <Card card={card} key={card.id} />;
-            })}
+        <div className="sticky top-0 flex h-screen flex-col items-center overflow-hidden">
+          <motion.div style={{ x }} className="flex flex-col gap-6 xl:gap-10">
+            <div className="flex gap-x-10">
+              {firstRow.map((card) => (
+                <Card card={card} key={card.id} />
+              ))}
+            </div>
+            <div className="flex gap-x-10">
+              {secondRow.map((card) => (
+                <Card card={card} key={card.id} />
+              ))}
+            </div>
           </motion.div>
         </div>
       </section>
     </>
   );
 };
+
+// Helper function to split an array into rows of a given size
+function chunkArray<T>(arr: T[], size: number): T[][] {
+  return arr.reduce<T[][]>((chunks, element, index) => {
+    if (index % size === 0) {
+      chunks.push([element]);
+    } else {
+      chunks[chunks.length - 1].push(element);
+    }
+    return chunks;
+  }, []);
+}
 
 const MobileCarousel = () => {
   return (
