@@ -78,7 +78,6 @@ export const eqp: mediaProps = {
     "assets/eqp/10e.jpg",
     "assets/eqp/10f.jpg",
     "assets/eqp/10g.jpg",
-    "assets/eqp/10h.jpg",
     "assets/eqp/10i.jpg",
   ],
 };

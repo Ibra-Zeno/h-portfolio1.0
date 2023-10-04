@@ -52,20 +52,22 @@ const Gallery: React.FC<PortfolioDataProps> = ({ project }) => {
       {images.map((image: string, index: number) => (
         <div
           key={index}
-          className="my-4 w-full  p-1"
+          className="my-4 aspect-video h-full w-full p-1"
           onClick={() => openImage(index)}
         >
           <Skeleton
             isLoaded={imageLoadStates[index]}
-            className=" mx-auto aspect-video h-auto w-auto rounded-lg"
+            className={`${
+              project.aspect === true ? "aspect-video" : "aspect-square"
+            } mx-auto h-auto w-auto rounded-lg`}
           >
             <Image
               src={image}
               alt={`Image ${index}`}
-              className="mx-auto aspect-video w-full cursor-pointer snap-center rounded-lg border-2 border-gray-200/40 bg-white object-cover shadow-lg transition duration-300 ease-in hover:scale-105 hover:shadow-xl"
-              width={400}
+              className="mx-auto w-full cursor-pointer snap-center rounded-lg border-2 border-gray-200/40 bg-white object-cover shadow-lg transition duration-300 ease-in hover:scale-105 hover:shadow-xl"
+              width={500}
               onLoad={() => handleImageLoad(index)}
-              height={400}
+              height={500}
             />
           </Skeleton>
         </div>

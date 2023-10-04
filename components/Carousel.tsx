@@ -6,12 +6,12 @@ const images = [
   "https://images.unsplash.com/photo-1692026172840-42b9f5688735?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxNjV8fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=500&q=60",
 ];
 import { motion, useTransform, useScroll } from "framer-motion";
-import Link from "next/link";
+import Router from "next/router";
 import { useRef } from "react";
 
 const Carousel = () => {
   return (
-    <div className="bg-lightBg dark:bg-darkBg relative w-full">
+    <div className="relative w-full bg-lightBg dark:bg-darkBg">
       <div className="flex h-fit items-center justify-center">
         <h3 className="flex py-12 text-xl md:text-2xl lg:text-3xl xl:text-4xl">
           My Portfolio
@@ -43,7 +43,8 @@ const HorizontalScrollCarousel = () => {
     <>
       <section
         ref={targetRef}
-        className="bg-lightBg dark:bg-darkBg relative lg:h-[200vh] xl:h-[300vh]"
+        id="portfolio"
+        className="relative bg-lightBg dark:bg-darkBg lg:h-[200vh] xl:h-[300vh]"
       >
         <div className="sticky top-0 flex h-screen items-center overflow-hidden">
           <motion.div style={{ x }} className="flex gap-6 xl:gap-10">
@@ -70,26 +71,24 @@ const MobileCarousel = () => {
 };
 
 const Card = ({ card }: any) => {
+  const handleCardClick = () => {
+    // Use router.push to navigate to the specified link
+    Router.push(card.link);
+  };
+
   return (
     <div
       key={card.id}
-      className="group relative aspect-video h-[170px] w-[100%] overflow-hidden rounded-lg border-2 border-gray-800/20 bg-neutral-200 shadow-2xl md:h-[250px] lg:aspect-square lg:h-[300px] lg:w-[300px] xl:h-[420px] xl:w-[420px]"
+      className="group relative aspect-video h-[170px] w-[100%] cursor-pointer overflow-hidden rounded-lg border-2 border-gray-800/20 bg-neutral-200 shadow-2xl md:h-[250px] lg:aspect-square lg:h-[300px] lg:w-[300px] xl:h-[420px] xl:w-[420px]"
+      onClick={handleCardClick}
+      id={card.id}
     >
-      <Link href={card.link}>
-        <div
-          /*           style={{
-            backgroundImage: `url(${card.url})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }} */
-          className="absolute inset-0 z-0 bg-gradient-to-r from-slate-500 to-slate-800 transition-transform duration-300 group-hover:scale-110"
-        ></div>
-        <div className="absolute inset-0 z-10 grid place-content-center">
-          <p className=" p-8 text-xl font-black uppercase text-white">
-            {card.title}
-          </p>
-        </div>
-      </Link>
+      <div className="absolute inset-0 z-0 bg-gradient-to-r from-slate-500 to-slate-800 transition-transform duration-300 group-hover:scale-110"></div>
+      <div className="absolute inset-0 z-10 grid place-content-center">
+        <p className=" p-8 text-xl font-black uppercase text-white">
+          {card.title}
+        </p>
+      </div>
     </div>
   );
 };
