@@ -1,19 +1,7 @@
-const images = [
-  "https://images.unsplash.com/photo-1691135323965-ceaf8fd3ad51?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1926&q=80",
-  "https://images.unsplash.com/photo-1676745738336-38a11ba98aca?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw3MHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
-  "https://images.unsplash.com/photo-1694071132086-ba14a2071b60?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80",
-  "https://images.unsplash.com/photo-1693856758403-bba589db78dc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80",
-  "https://images.unsplash.com/photo-1692026172840-42b9f5688735?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxNjV8fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=500&q=60",
-];
 import { motion, useTransform, useScroll } from "framer-motion";
 import Router from "next/router";
+import { type } from "os";
 import { useRef } from "react";
-
-interface CardData {
-  id: number;
-  title: string;
-  link: string;
-}
 
 const Carousel = () => {
   return (
@@ -109,7 +97,7 @@ const Card = ({ card }: any) => {
   return (
     <div
       key={card.id}
-      className="group relative aspect-video h-[170px] w-[100%] cursor-pointer overflow-hidden rounded-lg border-2 border-gray-800/20 bg-neutral-200 shadow-2xl md:h-[250px] lg:aspect-square lg:h-[300px] lg:w-[300px] xl:h-[420px] xl:w-[420px]"
+      className="group relative aspect-video h-[170px] w-[100%] cursor-pointer overflow-hidden rounded-lg border-2 border-gray-800/20 bg-neutral-200 shadow-2xl md:h-[250px] lg:aspect-square lg:h-[300px] lg:w-[300px] xl:h-[350px] xl:w-[350px]"
       onClick={handleCardClick}
       id={card.id}
     >
@@ -125,63 +113,60 @@ const Card = ({ card }: any) => {
 
 export default Carousel;
 
-const cards = [
+type CardProps = {
+  title: string;
+  id: number;
+  link: string;
+};
+
+const cards: CardProps[] = [
   {
-    url: images[0],
     title: "Integration",
     id: 1,
     link: "/integrationA",
   },
 
   {
-    url: images[0],
     title: "Internship",
     id: 2,
     link: "/internship",
   },
 
   {
-    url: images[0],
     title: "Reflective and Explorative Making in Architecture",
     id: 3,
     link: "/rxm",
   },
 
   {
-    url: images[0],
     title: "Industry and Practice",
     id: 4,
     link: "/industryAndPractice",
   },
 
   {
-    url: images[0],
     title: "Dance Studio",
     id: 5,
     link: "/danceStudio",
   },
 
   {
-    url: images[0],
     title: "Black History Mural",
     id: 6,
     link: "/blackHistoryMural",
   },
 
   {
-    url: images[0],
     title: "Visualisation and Communication",
     id: 7,
     link: "/vc",
   },
   {
-    url: images[0],
     title: "Card Structure",
     id: 8,
     link: "/cardStructure",
   },
   {
-    url: images[0],
     title: "EPQ",
     id: 8,
     link: "/epq",

@@ -1,42 +1,70 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Image from "next/image";
-import { Pagination, Spinner, Skeleton } from "@nextui-org/react";
-import { PortfolioDataProps } from "../public/assets/portfolioData";
+import { wrap } from "popmotion";
+import { Pagination, Skeleton } from "@nextui-org/react";
 import { ArrowLeftCircle, ArrowRightCircle, XCircle } from "lucide-react";
+import Image from "next/image";
 
 interface GalleryProps {
-  images: string[];
+  project: any;
 }
 
-const Gallery: React.FC<PortfolioDataProps> = ({ project }) => {
-  const [selectedImage, setSelectedImage] = useState<number | null>(null);
+const variants = {
+  enter: (direction: number) => {
+    return {
+      x: direction > 0 ? 1000 : -1000,
+      opacity: 0,
+    };
+  },
+  center: {
+    zIndex: 1,
+    x: 0,
+    opacity: 1,
+  },
+  exit: (direction: number) => {
+    return {
+      zIndex: 0,
+      x: direction < 0 ? 1000 : -1000,
+      opacity: 0,
+    };
+  },
+};
 
-  const [currentImageLoading, setCurrentImageLoading] =
-    useState<boolean>(false);
-  const [imageLoadStates, setImageLoadStates] = useState<boolean[]>(
-    new Array(project.images.length).fill(false),
-  );
+const swipeConfidenceThreshold = 10000;
+const swipePower = (offset: number, velocity: number) => {
+  return Math.abs(offset) * velocity;
+};
+
+const Gallery: React.FC<GalleryProps> = ({ project }) => {
+  const [selectedImage, setSelectedImage] = useState<number | null>(null);
+  const [direction, setDirection] = useState<number>(0);
+  const [loading, setLoading] = useState<boolean>(false);
 
   const images = project.images.map((img: string) => {
     return `/assets/${project.name}/${img}`;
   });
-  const videos = project.videos?.map((vid: string) => {
-    return `/assets/${project.name}/${vid}`;
-  });
+
+  const [imageLoadStates, setImageLoadStates] = useState<boolean[]>(
+    new Array(images.length).fill(false),
+  );
+
+  const imageIndex = wrap(0, images.length, selectedImage || 0);
+
+  const paginate = (newDirection: number) => {
+    setDirection(newDirection);
+    setSelectedImage((prevIndex) =>
+      wrap(0, images.length, (prevIndex ?? 0) + newDirection),
+    );
+  };
 
   const openImage = (index: number) => {
-    setCurrentImageLoading(true); // Start loading state
-    setTimeout(() => {
-      setSelectedImage(index);
-    }, 300); // Delay setting selected image to see the transition effect
+    setLoading(true);
+    setSelectedImage(index);
   };
 
   const closeImage = () => {
-    setCurrentImageLoading(true); // Start loading state
-    setTimeout(() => {
-      setSelectedImage(null);
-    }, 100); // Delay setting selected image to see the transition effect
+    setLoading(true);
+    setSelectedImage(null);
   };
 
   const handleImageLoad = (index: number) => {
@@ -45,11 +73,11 @@ const Gallery: React.FC<PortfolioDataProps> = ({ project }) => {
       updatedStates[index] = true;
       return updatedStates;
     });
-    setCurrentImageLoading(false); // End loading state when the image is loaded
+    setLoading(false);
   };
 
   return (
-    <div className="container gap-x-8 p-4 md:grid md:grid-cols-2 ">
+    <div className="container gap-x-8 p-4 md:grid md:grid-cols-2">
       {images.map((image: string, index: number) => (
         <div
           key={index}
@@ -73,56 +101,71 @@ const Gallery: React.FC<PortfolioDataProps> = ({ project }) => {
           </Skeleton>
         </div>
       ))}
-      <AnimatePresence>
+      <AnimatePresence initial={false} custom={direction}>
         {selectedImage !== null && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-20 flex items-center justify-center bg-black"
-          >
-            <Spinner className="absolute left-1/2 top-1/2 z-20" />
-            <div className="z-30">
-              <Image
-                src={images[selectedImage]}
-                alt={`Image ${selectedImage}`}
-                className={`${
-                  currentImageLoading ? "opacity-0" : "opacity-100"
-                } duration-20000 mx-auto rounded-lg object-contain transition-opacity ease-in-out`}
-                onLoad={() => setCurrentImageLoading(false)}
-                fill={true}
-              />
+          <>
+            <div className="fixed inset-0 z-20 flex items-center justify-center bg-black">
+              <motion.div
+                key={selectedImage}
+                custom={direction}
+                variants={variants}
+                initial="enter"
+                animate="center"
+                exit="exit"
+                transition={{ opacity: { duration: 0.3 } }}
+                drag="x"
+                className="z-20 h-full w-full"
+                dragConstraints={{ left: 0, right: 0 }}
+                dragElastic={1}
+                onDragEnd={(e, { offset, velocity }) => {
+                  const swipe = swipePower(offset.x, velocity.x);
+                  if (swipe < -swipeConfidenceThreshold) paginate(1);
+                  else if (swipe > swipeConfidenceThreshold) paginate(-1);
+                }}
+              >
+                <Image
+                  src={images[imageIndex]}
+                  alt={`Image ${selectedImage}`}
+                  draggable={false}
+                  className={`mx-auto rounded-lg object-contain ${
+                    loading ? "opacity-0" : "opacity-100"
+                  }`}
+                  onLoad={() => loading && setLoading(false)}
+                  fill={true}
+                />
+              </motion.div>
               <Pagination
-                className="absolute bottom-4 right-0 mx-auto flex w-full justify-center text-xl font-bold text-white lg:bottom-8"
+                className="absolute bottom-4 right-0 z-30 mx-auto flex w-full justify-center text-xl font-bold text-white lg:bottom-8"
                 showControls
                 size="sm"
                 total={images.length}
                 onChange={(page: number) => openImage(page - 1)}
-                initialPage={selectedImage + 1}
+                page={selectedImage! + 1}
               />
               <button
-                onClick={closeImage}
+                onClick={() => setSelectedImage(null)}
                 className="absolute right-[1vw] top-4 text-xl font-bold text-white"
               >
-                <XCircle className="h-8 w-8 rounded-full text-light2 dark:text-dark2" />
+                <XCircle
+                  className="absolute right-4 top-4 z-40 h-8 w-8 rounded-full text-light2 dark:text-dark2"
+                  onClick={closeImage}
+                />
               </button>
             </div>
-          </motion.div>
+          </>
         )}
       </AnimatePresence>
-      {videos && videos.length > 0
-        ? videos.map((video, index) => (
-            <video
-              width={400}
-              height={400}
-              key={index}
-              className="rounded-lg"
-              controls
-            >
-              <source src={video} type="video/mp4" />
-            </video>
-          ))
-        : null}
+
+      {selectedImage !== null && (
+        <Pagination
+          className="absolute bottom-4 right-0 mx-auto flex w-full justify-center text-xl font-bold text-white lg:bottom-8"
+          showControls
+          size="sm"
+          total={images.length}
+          onChange={(page: number) => paginate(page - (selectedImage! + 1))}
+          initialPage={selectedImage! + 1}
+        />
+      )}
     </div>
   );
 };

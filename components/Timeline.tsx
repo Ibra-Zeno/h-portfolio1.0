@@ -21,7 +21,7 @@ const Timeline: React.FC = () => {
             </p>
             <Button
               color="primary"
-              className="mx-auto mt-3 w-fit rounded-sm bg-light2 px-6 py-2 text-base text-lightText dark:bg-dark3 dark:text-dark1 md:mx-0"
+              className="mx-auto mt-3 w-fit rounded-sm bg-light3 px-6 py-2 text-base text-dark1 dark:bg-dark3 dark:text-dark1 md:mx-0"
             >
               Explore Now
             </Button>
@@ -185,7 +185,7 @@ const Timeline: React.FC = () => {
                 </div>
               </div>
               <div
-                className="flex-start relative mx-auto flex max-h-[400px] w-[300px] justify-center p-6 sm:w-[400px]"
+                className="flex-start relative mx-auto flex max-h-[400px] w-[300px] justify-center p-6 sm:w-[400px] lg:px-6 lg:py-0"
                 dangerouslySetInnerHTML={{ __html: urbanDesign }}
               ></div>
             </div>
