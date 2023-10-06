@@ -63,14 +63,13 @@ const ProjectPage: React.FC = () => {
           </div>
           <div className="my-auto py-6 lg:col-span-2">
             <Gallery project={projectData} />
-            <Link href={"/"} className="lg:hidden">
-              <Button
-                variant="shadow"
-                className="mx-auto mb-3 mt-4 flex justify-center"
-              >
-                Go Back
-              </Button>
-            </Link>
+            <Button
+              variant="shadow"
+              className="mx-auto mb-1 mt-6  hidden lg:flex lg:justify-center"
+              onClick={handleGoBack}
+            >
+              Go Back
+            </Button>
           </div>
         </section>
       </Layout>

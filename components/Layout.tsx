@@ -6,7 +6,7 @@ type LayoutProps = {
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
-    <div className="bg-lightBg text-lightText dark:text-dark1 dark:bg-darkBg relative flex h-full min-h-screen max-w-[100vw] scroll-smooth ">
+    <div className="relative flex h-full min-h-screen max-w-[100vw] scroll-smooth bg-lightBg text-lightText dark:bg-darkBg dark:text-dark1 ">
       <div className="mx-auto w-full font-primary">{children}</div>
     </div>
   );

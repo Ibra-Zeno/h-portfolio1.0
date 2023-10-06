@@ -7,14 +7,13 @@ import { Moon, Sun } from "lucide-react";
 const NavBar: React.FC = () => {
   const { theme, toggleTheme } = useTheme();
   return (
-    <nav className="flex items-center justify-between border border-gray-500/5 bg-lightBg px-6 py-3 dark:bg-darkBg">
+    <nav className="fixed top-0 z-40 flex w-full items-center justify-between border-b-1 border-b-gray-200/10 bg-gradient-to-b from-[#cccccc] to-lightBg px-10 py-5 opacity-100 dark:bg-gradient-to-b dark:from-darkBg dark:to-darkBg/90">
       <div className="">
         <Tooltip
           content={theme === "light" ? "Dark Mode" : "Light Mode"}
           placement="bottom"
-          showArrow={true}
           delay={500}
-          className="rounded-lg bg-light2 font-primary text-sm tracking-wide text-lightText dark:bg-dark2/90 dark:text-dark1"
+          className="rounded-lg bg-light2 font-primary text-sm tracking-wide text-dark1 dark:bg-dark2/90 "
         >
           <button onClick={toggleTheme}>
             {theme === "light" ? <Moon /> : <Sun />}
@@ -28,9 +27,8 @@ const NavBar: React.FC = () => {
         <Tooltip
           content="Portfolio"
           placement="bottom"
-          showArrow={true}
           delay={500}
-          className="rounded-lg bg-light2 font-primary text-sm tracking-wide text-lightText dark:bg-dark2/90 dark:text-dark1"
+          className="rounded-lg bg-light2 font-primary text-sm tracking-wide text-dark1 dark:bg-dark2/90 "
         >
           <Link href="/">
             <Briefcase
@@ -42,9 +40,8 @@ const NavBar: React.FC = () => {
         <Tooltip
           content="Contact Me"
           placement="bottom"
-          showArrow={true}
           delay={500}
-          className="rounded-lg bg-light2 font-primary text-sm tracking-wide text-lightText dark:bg-dark2/90 dark:text-dark1"
+          className="rounded-lg bg-light2 font-primary text-sm tracking-wide text-dark1 dark:bg-dark2/90 "
         >
           <Link href="/">
             <Send size={22} />

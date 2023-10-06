@@ -5,19 +5,8 @@ import { Button } from "@nextui-org/react";
 
 const Hero: React.FC = () => {
   return (
-    <div className="">
-      <div className=" bg-gradient-to-t from-lightBg to-[#c0c2c8] dark:from-darkBg dark:to-dark4">
-        {/* <div
-          className="pointer-events-none absolute inset-0 z-0 transform-gpu overflow-hidden blur-3xl sm:top-4"
-          aria-hidden="true"
-        >
-          <div
-            className="relative left-1/2 aspect-[1155/678] w-[36.125rem] bg-gradient-to-bl from-dark3 to-dark2 opacity-30 sm:left-[calc(50%+36rem)] sm:w-2/5"
-            style={{
-              clipPath: "ellipse(41% 30% at 50% 50%)",
-            }}
-          ></div>
-        </div> */}
+    <div className="mt-20">
+      <div className=" bg-lightBg dark:bg-darkBg">
         <div className="mx-auto px-4 py-16 sm:max-w-xl md:max-w-full md:px-24 lg:max-w-screen-xl lg:px-8 lg:py-6">
           <div className="max-w-xl sm:mx-auto lg:max-w-2xl">
             <div className="mb-16 flex flex-col sm:mb-0 sm:text-center">
