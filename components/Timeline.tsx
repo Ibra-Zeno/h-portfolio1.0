@@ -37,7 +37,7 @@ const Timeline: React.FC = () => {
                     <p className="text-sm text-light1 dark:text-dark2 md:text-base">
                       London, UK 2023
                     </p>
-                    <h6 className="mb-3 text-sm italic text-gray-600 dark:text-dark3/60 md:text-base">
+                    <h6 className="mb-3 text-xs italic tracking-wide text-slate-800 dark:text-slate-300 md:text-sm">
                       Part Time Job
                     </h6>
                     <h4 className="mb-3 text-base font-bold md:text-lg lg:text-xl xl:text-2xl">
@@ -57,7 +57,7 @@ const Timeline: React.FC = () => {
                     <p className="text-sm text-light1 dark:text-dark2 md:text-base">
                       London, UK 2022
                     </p>
-                    <h6 className="mb-3 text-sm italic text-gray-600 dark:text-dark3/60 md:text-base">
+                    <h6 className="mb-3 text-xs italic tracking-wide text-slate-800 dark:text-slate-300 md:text-sm">
                       Work Placement
                     </h6>
                     <h4 className="mb-3 text-base font-bold md:text-lg lg:text-xl xl:text-2xl">
@@ -77,7 +77,7 @@ const Timeline: React.FC = () => {
                     <p className=" text-sm text-light1 dark:text-dark2 md:text-base">
                       Malaysia 2020
                     </p>
-                    <h6 className="mb-3 text-sm italic text-gray-600 dark:text-dark3/60 md:text-base">
+                    <h6 className="mb-3 text-xs italic tracking-wide text-slate-800 dark:text-slate-300 md:text-sm">
                       Summer Internship
                     </h6>
                     <h4 className="mb-3 text-base font-bold md:text-lg lg:text-xl xl:text-2xl">
@@ -95,7 +95,7 @@ const Timeline: React.FC = () => {
                     <p className="text-sm text-light1 dark:text-dark2 md:text-base">
                       6-9 May, 2021
                     </p>
-                    <h6 className="mb-3 text-sm italic text-gray-600 dark:text-dark3/60 md:text-base">
+                    <h6 className="mb-3 text-xs italic tracking-wide text-slate-800 dark:text-slate-300 md:text-sm">
                       Part Time Job
                     </h6>
                     <h4 className="mb-3 text-base font-bold md:text-lg lg:text-xl xl:text-2xl">
@@ -113,7 +113,7 @@ const Timeline: React.FC = () => {
                     <p className=" text-sm text-light1 dark:text-dark2 md:text-base">
                       London, UK 2023
                     </p>
-                    <h6 className="mb-3 text-sm italic text-gray-600 dark:text-dark3/60 md:text-base">
+                    <h6 className="mb-3 text-xs italic tracking-wide text-slate-800 dark:text-slate-300 md:text-sm">
                       Part Time Job
                     </h6>
                     <h4 className="mb-3 text-base font-bold md:text-lg lg:text-xl xl:text-2xl">
@@ -133,7 +133,7 @@ const Timeline: React.FC = () => {
                     <p className="text-sm text-light1 dark:text-dark2 md:text-base">
                       6-9 May, 2021
                     </p>
-                    <h6 className="mb-3 text-sm italic text-gray-600 dark:text-dark3/60 md:text-base">
+                    <h6 className="mb-3 text-xs italic tracking-wide text-slate-800 dark:text-slate-300 md:text-sm">
                       Part Time Job
                     </h6>
                     <h4 className="mb-3 text-base font-bold md:text-lg lg:text-xl xl:text-2xl">
@@ -151,7 +151,7 @@ const Timeline: React.FC = () => {
                     <p className="text-sm text-light1 dark:text-dark2 md:text-base">
                       10 May, 2021
                     </p>
-                    <h6 className="mb-3 text-sm italic text-gray-600 dark:text-dark3/60 md:text-base">
+                    <h6 className="mb-3 text-xs italic tracking-wide text-slate-800 dark:text-slate-300 md:text-sm">
                       Part Time Job
                     </h6>
                     <h4 className="mb-3 text-base font-bold md:text-lg lg:text-xl xl:text-2xl">
@@ -171,7 +171,7 @@ const Timeline: React.FC = () => {
                     <p className="text-sm text-light1 dark:text-dark2 md:text-base">
                       12 May, 2021
                     </p>
-                    <h6 className="mb-3 text-sm italic text-gray-600 dark:text-dark3/60 md:text-base">
+                    <h6 className="mb-3 text-xs italic tracking-wide text-slate-800 dark:text-slate-300 md:text-sm">
                       Part Time Job
                     </h6>
                     <h4 className="mb-3 text-base font-bold md:text-lg lg:text-xl xl:text-2xl">

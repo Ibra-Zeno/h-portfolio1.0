@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { useTheme } from "../context/themeContext";
 import { Tooltip } from "@nextui-org/react";
+// Add to project.tsx slug ^^
 import { Briefcase, Send } from "lucide-react";
 import { Moon, Sun } from "lucide-react";
 

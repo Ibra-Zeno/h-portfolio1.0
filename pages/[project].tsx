@@ -5,9 +5,14 @@ import Router from "next/router";
 import Link from "next/link";
 import Layout from "../components/Layout";
 import React, { useEffect, useState } from "react";
+import { Tooltip } from "@nextui-org/react";
+import { Moon, Sun } from "lucide-react";
 import { Spinner, Button } from "@nextui-org/react";
+import { useTheme } from "../context/themeContext";
 
 const ProjectPage: React.FC = () => {
+  const { theme, toggleTheme } = useTheme();
+
   const router = useRouter();
   const { project } = router.query;
 
@@ -65,11 +70,32 @@ const ProjectPage: React.FC = () => {
             <Gallery project={projectData} />
             <Button
               variant="shadow"
-              className="mx-auto mb-1 mt-6  hidden lg:flex lg:justify-center"
+              className="mx-auto mb-1 mt-6 flex justify-center lg:hidden"
               onClick={handleGoBack}
             >
               Go Back
             </Button>
+          </div>
+          <div className="relative">
+            <div className="fixed bottom-6 left-6 z-0 lg:left-10 ">
+              <Tooltip
+                content={theme === "light" ? "Dark Mode" : "Light Mode"}
+                placement="bottom"
+                delay={500}
+                className="rounded-lg bg-light2 font-primary text-sm tracking-wide text-dark1 dark:bg-dark2/90 "
+              >
+                <button
+                  onClick={toggleTheme}
+                  className="rounded-full  bg-stone-500 p-2 shadow-xl transition-all duration-200 ease-in-out hover:bg-stone-300 dark:bg-gray-700 dark:hover:bg-gray-600 lg:p-3"
+                >
+                  {theme === "light" ? (
+                    <Moon className="h-6 w-6 text-white lg:h-7 lg:w-7" />
+                  ) : (
+                    <Sun className="h-6 w-6  lg:h-7 lg:w-7" />
+                  )}
+                </button>
+              </Tooltip>
+            </div>
           </div>
         </section>
       </Layout>

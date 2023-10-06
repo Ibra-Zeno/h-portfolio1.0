@@ -1,4 +1,4 @@
-import {
+import React, {
   createContext,
   useContext,
   useEffect,
@@ -7,6 +7,7 @@ import {
 } from "react";
 
 type Theme = "light" | "dark";
+
 interface ThemeContextProps {
   theme: Theme;
   toggleTheme: () => void;
@@ -19,13 +20,29 @@ interface ThemeProviderProps {
 }
 
 export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
-  const [theme, setTheme] = useState<Theme>("dark");
+  // Get the initial theme preference from local storage (if available)
+  let storedTheme: Theme = "dark"; // Default theme if localStorage is unavailable
+
+  try {
+    const storedThemeRaw = localStorage.getItem("theme");
+    if (storedThemeRaw === "light" || storedThemeRaw === "dark") {
+      storedTheme = storedThemeRaw as Theme; // Cast to Theme type
+    }
+  } catch (error) {
+    console.error("Error accessing localStorage:", error);
+  }
+
+  const [theme, setTheme] = useState<Theme>(storedTheme);
 
   const toggleTheme = () => {
-    if (theme === "light") {
-      setTheme("dark");
-    } else {
-      setTheme("light");
+    // Toggle the theme between "light" and "dark"
+    const newTheme = theme === "light" ? "dark" : "light";
+    setTheme(newTheme);
+    // Save the theme preference to local storage
+    try {
+      localStorage.setItem("theme", newTheme);
+    } catch (error) {
+      console.error("Error saving to localStorage:", error);
     }
   };
 
