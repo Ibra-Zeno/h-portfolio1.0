@@ -116,7 +116,7 @@ const MobileCarousel = () => {
             <Card card={card} key={card.id} />
           ))}
         </div>
-        <div className="flex flex-col gap-y-6" data-spotlight>
+        <div className="my-auto flex h-fit flex-col gap-y-6" data-spotlight>
           {secondRow.map((card) => (
             <Card card={card} key={card.id} />
           ))}
@@ -124,7 +124,11 @@ const MobileCarousel = () => {
       </div>
       <div className="mx-4 hidden grid-cols-3 justify-center gap-x-4 gap-y-6 md:grid md:gap-x-8 xl:hidden">
         {grid.map((row, rowIndex) => (
-          <div className="flex flex-col gap-y-6" data-spotlight key={rowIndex}>
+          <div
+            className="flex h-full flex-col gap-y-6"
+            data-spotlight
+            key={rowIndex}
+          >
             {row.map((card) => (
               <Card card={card} key={card.id} />
             ))}
@@ -153,14 +157,14 @@ const Card = ({ card }: any) => {
   return (
     // Border bg
     // After/Dark bg = hover effect
-    <div className="relative h-full overflow-hidden rounded-3xl p-px shadow-xl before:pointer-events-none before:absolute before:-left-40 before:-top-40 before:z-10 before:h-80 before:w-80 before:translate-x-[var(--mouse-x)] before:translate-y-[var(--mouse-y)] before:rounded-full before:bg-slate-200 before:opacity-0 before:blur-[100px] before:transition-opacity before:duration-500 after:pointer-events-none after:absolute after:-left-48 after:-top-48 after:z-30 after:h-96 after:w-96 after:translate-x-[var(--mouse-x)] after:translate-y-[var(--mouse-y)] after:rounded-full after:bg-teal-700 after:opacity-0 after:blur-[100px] after:transition-opacity after:duration-500 after:hover:opacity-20 before:group-hover:opacity-100  dark:bg-slate-700 dark:after:bg-slate-200 dark:after:hover:opacity-10 lg:h-80 lg:w-[300px]">
+    <div className="relative h-full overflow-hidden rounded-3xl p-px shadow-xl before:pointer-events-none before:absolute before:-left-40 before:-top-40 before:z-10 before:h-80 before:w-80 before:translate-x-[var(--mouse-x)] before:translate-y-[var(--mouse-y)] before:rounded-full before:bg-slate-200 before:opacity-0 before:blur-[100px] before:transition-opacity before:duration-500 after:pointer-events-none after:absolute after:-left-48 after:-top-48 after:z-30 after:h-96 after:w-96 after:translate-x-[var(--mouse-x)] after:translate-y-[var(--mouse-y)] after:rounded-full after:bg-white after:opacity-0 after:blur-[100px] after:transition-opacity after:duration-500 after:hover:opacity-30 before:group-hover:opacity-100  dark:bg-slate-700 dark:after:bg-slate-200 dark:after:hover:opacity-10 lg:h-80 lg:w-[300px]">
       {/* card bg */}
       <div
         className={`${
           theme === "light"
             ? "bg-gradient-to-b from-[#7C9D96]/40 to-[#7C9D96]/60"
             : "bg-gradient-to-b from-slate-800 to-slate-900/90"
-        } relative z-20 h-full overflow-hidden rounded-[inherit]  p-6 pb-8 pt-4 `}
+        } relative z-20 h-full overflow-hidden rounded-[inherit] p-6 pb-8 pt-4 `}
       >
         {/* <!-- Radial gradient --> */}
         <div
@@ -169,7 +173,7 @@ const Card = ({ card }: any) => {
         >
           <div className="translate-z-0 absolute inset-0 rounded-full bg-lightBg blur-[80px] dark:bg-darkBg"></div>
         </div>
-        <div className="flex h-full flex-col items-center justify-around text-center">
+        <div className="flex h-full flex-col items-center justify-around py-4 text-center lg:aspect-auto lg:py-0">
           {/* Image */}
           <div className="flex flex-col items-center gap-y-14">
             <div className="relative">
@@ -183,7 +187,7 @@ const Card = ({ card }: any) => {
             </div>
             {/* <!-- Text -->  -mt-8 mb-8 xl:-mt-4 xl:mb-4*/}
             <div className="">
-              <h2 className="max-w-prose text-lg font-bold text-lightText dark:text-dark1 xl:text-xl">
+              <h2 className="mb-3 max-w-prose text-base font-bold text-lightText dark:text-dark1 lg:mb-0 lg:text-lg xl:text-xl">
                 {card.title}
               </h2>
             </div>

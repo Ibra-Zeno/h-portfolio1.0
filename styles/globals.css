@@ -86,3 +86,9 @@
   border-radius: 50%; /* To make the container circular */
   display: flex;
 }
+
+/* Set text selection color and background */
+::selection {
+  color: white;
+  background-color: #913175;
+}

@@ -1,9 +1,20 @@
-import Link from "next/link";
 import Image from "next/image";
 import Haranya_portfolio_image from "../public/images/Haranya_portfolio_image.jpeg";
 import { Button } from "@nextui-org/react";
+import Router from "next/router";
 
 const Hero: React.FC = () => {
+  const handleCvClick = () => {
+    setTimeout(() => {
+      Router.push("/");
+    }, 400);
+  };
+  const handlePortfolioClick = () => {
+    setTimeout(() => {
+      Router.push("/#portfolio");
+    }, 400);
+  };
+
   return (
     <div className="mt-20">
       <div className=" bg-lightBg dark:bg-darkBg">
@@ -30,12 +41,22 @@ const Hero: React.FC = () => {
                 </p>
               </div>
               <div className="flex justify-center">
-                <Button
-                  color="primary"
-                  className="mx-auto rounded-sm bg-light3 px-6 py-2 dark:bg-dark3"
-                >
-                  <Link href="/">Portfolio</Link>
-                </Button>
+                <div className="flex gap-x-4">
+                  <Button
+                    color="primary"
+                    className="mx-auto rounded border-2 border-light3 bg-transparent px-6 py-2 tracking-wide text-lightText transition-all duration-400 ease-soft-spring hover:border-light3/80 hover:bg-light3 hover:text-dark1 dark:border-dark3 dark:text-dark1 dark:hover:border-dark3/80 dark:hover:bg-dark3 "
+                    onClick={handleCvClick}
+                  >
+                    Download CV
+                  </Button>
+                  <Button
+                    color="primary"
+                    onClick={handlePortfolioClick}
+                    className="mx-auto rounded bg-light3 px-6 py-2 tracking-wide transition-all duration-400 ease-soft-spring hover:bg-light3/80 dark:bg-dark3 dark:hover:bg-dark3/80"
+                  >
+                    Portfolio
+                  </Button>
+                </div>
               </div>
             </div>
           </div>
