@@ -26,7 +26,7 @@ const Contact: React.FC = () => {
       <div className=" flex h-full flex-col md:grid md:grid-cols-2">
         <div
           id="left-contact"
-          className="from-lightBg dark:from-darkBg relative aspect-square h-full w-full bg-gradient-to-tr to-transparent  md:col-span-1"
+          className="relative aspect-square h-full w-full bg-gradient-to-tr from-lightBg to-transparent dark:from-darkBg  md:col-span-1"
         >
           <Image
             src="/images/Hexagon.svg"
@@ -35,22 +35,22 @@ const Contact: React.FC = () => {
             className="absolute inset-0 -z-0 object-cover opacity-30"
           />
 
-          <div className=" from-lightBg via-lightBg dark:from-darkBg  dark:via-darkBg  relative z-10 flex h-full w-full flex-col justify-center bg-gradient-to-bl to-transparent px-8 py-20 ">
+          <div className=" relative z-10 flex h-full w-full  flex-col  justify-center bg-gradient-radial from-transparent via-lightBg to-lightBg px-8 py-20 text-center dark:via-darkBg dark:to-darkBg md:text-left ">
             <div className="mx-auto lg:w-4/5 xl:w-3/5">
               <h3 className="mb-4 text-xl font-semibold md:text-3xl lg:text-4xl">
                 Get in touch
               </h3>
-              <p className="mb-14 text-lg">
+              <p className="mb-14 text-sm md:text-lg">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa
                 nam ad fugit quasi sint eius harum iure. Dolorum iusto iure
                 neque illo molestias totam, ea fugit, ipsam, rem rerum nulla?
               </p>
               <div className="flex flex-col gap-y-3">
-                <div className="flex flex-row gap-x-3 font-medium">
+                <div className="flex flex-row justify-center gap-x-3 text-sm font-medium md:justify-start md:text-base">
                   <Building />
                   <p>London, UK</p>
                 </div>
-                <div className="flex flex-row gap-x-3 font-medium">
+                <div className="flex flex-row justify-center gap-x-3 text-sm font-medium md:justify-start md:text-base">
                   <Mail />
                   <Link href="mailto:example@test.com">example@test.com</Link>
                 </div>
@@ -60,7 +60,7 @@ const Contact: React.FC = () => {
           </div>
         </div>
         <div className="md:col-span-1">
-          <form className="mx-auto flex h-full max-w-3xl flex-col justify-center gap-y-9 px-8 py-20 text-base md:order-none md:px-24">
+          <form className="mx-auto flex h-full max-w-3xl flex-col justify-center gap-y-9 px-8 py-8 text-base md:order-none md:px-24 md:py-20">
             <div className="flex flex-row gap-x-6">
               <Input
                 label="First Name"
@@ -142,9 +142,9 @@ const Contact: React.FC = () => {
             />
             <Button
               type="submit"
-              size="lg" // Apply the appropriate size based on screen width
-              radius="md"
-              className="font-semibold tracking-wide"
+              size="lg"
+              radius="sm"
+              className="bg-light3 font-semibold tracking-wide text-lightBg dark:bg-dark3"
             >
               Submit
             </Button>

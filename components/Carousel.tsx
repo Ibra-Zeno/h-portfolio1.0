@@ -175,7 +175,7 @@ const Card = ({ card }: any) => {
         </div>
         <div className="flex h-full flex-col items-center justify-around py-4 text-center lg:aspect-auto lg:py-0">
           {/* Image */}
-          <div className="flex flex-col items-center gap-y-14">
+          <div className="flex flex-col items-center gap-y-6 md:gap-y-14">
             <div className="relative">
               <div
                 className={`${
@@ -187,7 +187,7 @@ const Card = ({ card }: any) => {
             </div>
             {/* <!-- Text -->  -mt-8 mb-8 xl:-mt-4 xl:mb-4*/}
             <div className="">
-              <h2 className="mb-3 max-w-prose text-base font-bold text-lightText dark:text-dark1 lg:mb-0 lg:text-lg xl:text-xl">
+              <h2 className="mb-3 max-w-prose text-sm font-bold text-lightText dark:text-dark1 md:text-base lg:mb-0 lg:text-lg xl:text-xl">
                 {card.title}
               </h2>
             </div>

@@ -1,9 +1,13 @@
-import Link from "next/link";
-import Image from "next/image";
+import Router from "next/router";
 import { Button } from "@nextui-org/react";
 import { urbanDesign } from "../public/images/urban_design";
 
 const Timeline: React.FC = () => {
+  const handleCvClick = () => {
+    setTimeout(() => {
+      Router.push("/");
+    }, 400);
+  };
   return (
     <section>
       <div className="bg-lightBg py-8 text-lightText dark:bg-darkBg dark:text-dark1">
@@ -21,9 +25,10 @@ const Timeline: React.FC = () => {
             </p>
             <Button
               color="primary"
-              className="mx-auto mt-3 w-fit rounded-sm bg-light3 px-6 py-2 text-base text-dark1 dark:bg-dark3 dark:text-dark1 md:mx-0"
+              className="mx-auto mt-3 w-fit rounded border-2 border-light3 bg-transparent px-6 py-2 tracking-wide text-lightText transition-all duration-400 ease-soft-spring hover:border-light3/80 hover:bg-light3 hover:text-dark1 dark:border-dark3 dark:text-dark1 dark:hover:border-dark3/80 dark:hover:bg-dark3 md:mx-0 "
+              onClick={handleCvClick}
             >
-              Explore Now
+              View CV
             </Button>
           </div>
           <div className="sticky mx-auto md:w-2/3">

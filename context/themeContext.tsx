@@ -21,7 +21,7 @@ interface ThemeProviderProps {
 
 export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
   // Get the initial theme preference from local storage (if available)
-  let storedTheme: Theme = "dark"; // Default theme if localStorage is unavailable
+  let storedTheme: Theme = "light"; // Default theme if localStorage is unavailable
 
   try {
     const storedThemeRaw = localStorage.getItem("theme");
