@@ -12,6 +12,7 @@ import {
   Blocks,
   ShieldHalf,
   Home,
+  ArrowRightCircle,
 } from "lucide-react";
 import Spotlight from "./Spotlight";
 import { useTheme } from "../context/themeContext";
@@ -31,8 +32,6 @@ const Carousel = () => {
       <div className="xl:hidden">
         <MobileCarousel />
       </div>
-
-      <div className="flex h-12 items-center justify-center"></div>
     </div>
   );
 };
@@ -196,15 +195,8 @@ const Card = ({ card }: any) => {
             className="inline-flex items-center justify-center whitespace-nowrap rounded-lg border px-3 py-1.5 text-sm font-medium text-lightText transition-colors duration-150 focus-visible:outline-none focus-visible:ring focus-visible:ring-indigo-300 dark:border-slate-700 dark:bg-slate-800 dark:text-dark1 dark:hover:bg-slate-900 dark:focus-visible:ring-slate-600 lg:text-base"
             href={card.link}
           >
-            <svg
-              className="mr-2 fill-slate-500"
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="14"
-            >
-              <path d="M12.82 8.116A.5.5 0 0 0 12 8.5V10h-.185a3 3 0 0 1-2.258-1.025l-.4-.457-1.328 1.519.223.255A5 5 0 0 0 11.815 12H12v1.5a.5.5 0 0 0 .82.384l3-2.5a.5.5 0 0 0 0-.768l-3-2.5ZM12.82.116A.5.5 0 0 0 12 .5V2h-.185a5 5 0 0 0-3.763 1.708L3.443 8.975A3 3 0 0 1 1.185 10H1a1 1 0 1 0 0 2h.185a5 5 0 0 0 3.763-1.708l4.609-5.267A3 3 0 0 1 11.815 4H12v1.5a.5.5 0 0 0 .82.384l3-2.5a.5.5 0 0 0 0-.768l-3-2.5ZM1 4h.185a3 3 0 0 1 2.258 1.025l.4.457 1.328-1.52-.223-.254A5 5 0 0 0 1.185 2H1a1 1 0 0 0 0 2Z" />
-            </svg>
-            <span>View</span>
+            View
+            <ArrowRightCircle className="ml-2 h-4 w-4 lg:h-5 lg:w-5" />
           </Link>
         </div>
       </div>

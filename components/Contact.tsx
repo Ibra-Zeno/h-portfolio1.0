@@ -23,7 +23,7 @@ const Contact: React.FC = () => {
 
   return (
     <section className="">
-      <div className=" flex h-full flex-col md:grid md:grid-cols-2">
+      <div className=" container mx-auto flex h-full flex-col md:grid md:h-[60%] md:grid-cols-2">
         <div
           id="left-contact"
           className="relative aspect-square h-full w-full bg-gradient-to-tr from-lightBg to-transparent dark:from-darkBg  md:col-span-1"
