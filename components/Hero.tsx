@@ -16,12 +16,24 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <div className="md:mt-20">
-      <div className=" bg-lightBg dark:bg-darkBg">
-        <div className="mx-auto px-4 py-12 sm:max-w-xl md:max-w-full md:px-24 md:py-16 lg:max-w-screen-xl lg:px-8 lg:py-6">
+    <div className="relative md:mt-20">
+      {/* Background with gradient */}
+      <div className=" bg-lightBg text-lightText dark:bg-darkBg dark:text-dark1">
+        {/* Clip path shape */}
+        <div className="absolute inset-0 z-0 h-full blur-3xl">
+          <div
+            className=" from-lGrad1 to-lGrad2 dark:from-dGrad1 dark:to-dGrad2 z-0 mx-auto h-full w-[48rem] transform-gpu overflow-hidden bg-gradient-to-tr opacity-30 dark:opacity-[0.12]"
+            style={{
+              clipPath: "ellipse(50% 36% at 50% 50%)",
+            }}
+          ></div>
+        </div>
+
+        {/* Content */}
+        <div className="relative z-10 mx-auto px-4 py-12 sm:max-w-xl md:max-w-full md:px-24 md:py-16 lg:max-w-screen-xl lg:px-8 lg:py-6">
           <div className="max-w-xl sm:mx-auto lg:max-w-2xl">
             <div className="mb-16 flex flex-col sm:mb-0 sm:text-center">
-              <div className="relative mx-auto mb-6 flex h-16 w-16 shrink-0 flex-col justify-center overflow-hidden rounded-full border-4 border-gray-500/60 shadow-xl">
+              <div className="relative mx-auto mb-6 flex h-16 w-16 shrink-0 flex-col justify-center overflow-hidden rounded-full border-2 border-gray-100/60 shadow-xl transition-all duration-300 ease-soft-spring hover:-translate-y-1 dark:border-slate-900/60">
                 <Image
                   className="h-full w-full object-center"
                   alt="Haranya image"
@@ -36,7 +48,7 @@ const Hero: React.FC = () => {
                   Hello, my little stalker!
                 </h2>
                 <p className="max-w-prose text-base text-lightText dark:text-dark1 md:text-lg">
-                  The colours are due to change (especially the background on
+                  The colors are due to change (especially the background on
                   your picture), but is the picture size better for you?
                 </p>
               </div>

@@ -11,55 +11,121 @@ const Timeline: React.FC = () => {
   return (
     <section>
       <div className="bg-lightBg py-8 text-lightText dark:bg-darkBg dark:text-dark1">
-        <div className="mx-auto my-12 flex flex-col items-start lg:container md:my-24 md:flex-row">
-          <div className="sticky mx-auto mt-2 flex w-full max-w-[100vw] flex-col px-8 text-center md:top-36 md:mt-12 md:w-1/3 md:text-left">
-            <p className="tracking-loose text-sm uppercase text-light2/80 dark:text-dark2 md:text-base">
-              Working Process
-            </p>
-            <p className="mb-2 text-2xl leading-normal md:text-4xl md:leading-relaxed">
-              The Story So Far
-            </p>
-            <p className="mb-4 text-sm text-lightText dark:text-dark1 md:text-base">
-              Unlock your potential; it is greater than you think. Trust
-              yourself and let your abilities shine.
-            </p>
-            <Button
-              color="primary"
-              className="mx-auto mt-3 w-fit rounded border-2 border-light3 bg-transparent px-6 py-2 tracking-wide text-lightText transition-all duration-400 ease-soft-spring hover:border-light3/80 hover:bg-light3 hover:text-dark1 dark:border-dark3 dark:text-dark1 dark:hover:border-dark3/80 dark:hover:bg-dark3 md:mx-0 "
-              onClick={handleCvClick}
-            >
-              View CV
-            </Button>
+        <div className="relative mx-auto my-12 flex flex-col items-start lg:container md:my-24 md:flex-row">
+          <div className="relative mx-auto mt-2 flex h-fit w-full max-w-[100vw] flex-col px-8 text-center md:sticky md:top-36 md:mt-12 md:w-1/3 md:text-left">
+            <div className="relative z-10">
+              <p className="tracking-loose text-sm uppercase text-light2/80 dark:text-dark2 md:text-base">
+                Success Moments
+              </p>
+              <p className="mb-2 text-2xl leading-normal md:text-4xl md:leading-relaxed">
+                The Story So Far
+              </p>
+              <p className="mb-4 text-sm text-lightText dark:text-dark1 md:text-base lg:max-w-[40ch]">
+                Reflections on my journey, providing insights into my past
+                roles, contributions, and aspirations.
+              </p>
+              <Button
+                className="mx-auto mt-3 w-fit rounded border-2 border-light3 bg-lightBg px-6 py-2 tracking-wide text-lightText transition-all duration-400 ease-soft-spring hover:border-light3/80 hover:bg-light3 hover:text-dark1 dark:border-dark3 dark:bg-darkBg dark:text-dark1 dark:hover:border-dark3/80 dark:hover:bg-dark3 md:mx-0 "
+                onClick={handleCvClick}
+              >
+                View CV
+              </Button>
+            </div>
           </div>
+          {/* polygon(42% 8%, 72% 14%, 53% 30%, 16% 27%, 34% 57%, 51% 53%, 78% 54%, 69% 71%, 61% 61%, 39% 65%, 9% 66%, 26% 80%, 50% 82%, 70% 90%, 51% 96%, 35% 94%, 40% 99%, 64% 99%) */}
           <div className="sticky mx-auto md:w-2/3">
             <div className="container mx-auto h-full w-full">
-              <div className="wrap relative h-full w-screen overflow-hidden px-2 py-10 sm:w-auto">
+              <div className="relative h-full w-screen overflow-hidden px-2 py-10 sm:w-auto">
+                <div className="pointer-events-none absolute inset-0 z-0 h-full blur-2xl">
+                  <div
+                    className=" from-lGrad1 to-lGrad2 dark:from-dGrad1 dark:to-dGrad2 z-0 mx-auto h-full w-[15rem] transform-gpu overflow-hidden bg-gradient-to-tr opacity-30 dark:opacity-[0.14] lg:w-[40rem]"
+                    style={{
+                      clipPath: "ellipse(7% 50% at 50% 50%)",
+                    }}
+                  ></div>
+                </div>
                 <div className="absolute right-1/2 h-full translate-x-[1px] rounded-full border-2 border-light3 dark:border-dark3"></div>
                 <div className="absolute left-1/2 h-full -translate-x-[1px] rounded-full border-2 border-light3 dark:border-dark3"></div>
-                <div className="left-timeline mb-8 flex w-full flex-row-reverse items-center justify-between">
+                <div className="z-10 mb-8 flex w-full flex-row-reverse items-center justify-between">
                   <div className="order-1 w-[45%]"></div>
                   <div className="order-1 w-[45%] px-1 py-4 text-right">
                     <p className="text-sm text-light1 dark:text-dark2 md:text-base">
-                      London, UK 2023
+                      London, UK 2017
                     </p>
                     <h6 className="mb-3 text-xs italic tracking-wide text-slate-800 dark:text-slate-300 md:text-sm">
-                      Part Time Job
+                      Access to Architecture Summer Course
                     </h6>
                     <h4 className="mb-3 text-base font-bold md:text-lg lg:text-xl xl:text-2xl">
-                      Optima Planning Engineering Ltd
+                      University of Westminster
                     </h4>
                     <p className="text-xs leading-snug text-lightText text-opacity-100 dark:text-dark1 md:text-sm">
-                      Success often requires faith in yourself that surpasses
-                      any doubt. Believe in your abilities, even when the path
-                      ahead seems uncertain, for it is in those moments of
-                      self-belief that you will discover your true potential.
+                      Completed a collaborative course on tension structures,
+                      small-scale models and large-scale project design
                     </p>
                   </div>
                 </div>
-                <div className="right-timeline mb-8 flex w-full items-center justify-between">
+                <div className="right-timeline z-10 mb-8 flex w-full items-center justify-between">
                   <div className="order-1 w-[45%]"></div>
                   <div className="order-1  w-[45%] px-1 py-4 text-left">
                     <p className="text-sm text-light1 dark:text-dark2 md:text-base">
+                      London, UK 2017
+                    </p>
+                    <h6 className="mb-3 text-xs italic tracking-wide text-slate-800 dark:text-slate-300 md:text-sm">
+                      Work Placement
+                    </h6>
+                    <h4 className="mb-3 text-base font-bold md:text-lg lg:text-xl xl:text-2xl">
+                      Eco Chic
+                    </h4>
+                    <p className="text-xs leading-snug text-lightText text-opacity-100 dark:text-dark1 md:text-sm">
+                      Managed Eco Chic&apos;s online expansion, including
+                      website development, product catalog setup, and
+                      environmental commitment articles.
+                    </p>
+                  </div>
+                </div>
+                <div className="left-timeline z-10 mb-8 flex w-full flex-row-reverse items-center justify-between">
+                  <div className="order-1 w-[45%]"></div>
+                  <div className="order-1 w-[45%] px-1 py-4 text-right">
+                    <p className=" text-sm text-light1 dark:text-dark2 md:text-base">
+                      London, UK 2019
+                    </p>
+                    <h6 className="mb-3 text-xs italic tracking-wide text-slate-800 dark:text-slate-300 md:text-sm">
+                      Summer Internship
+                    </h6>
+                    <h4 className="mb-3 text-base font-bold md:text-lg lg:text-xl xl:text-2xl">
+                      Farrow Silverton Architects
+                    </h4>
+                    <p className="text-xs leading-snug text-lightText text-opacity-100 dark:text-dark1 md:text-sm">
+                      Received training in SketchUp and AutoCAD, applied to
+                      create a digital model of a modern residence. Client
+                      visits enhanced essential communication architectural
+                      skills.
+                    </p>
+                  </div>
+                </div>
+                <div className="right-timeline z-10 mb-8 flex w-full items-center justify-between">
+                  <div className="order-1 w-[45%]"></div>
+                  <div className="order-1  w-[45%] px-1 py-4 text-left">
+                    <p className="text-sm text-light1 dark:text-dark2 md:text-base">
+                      Malaysia, 2020
+                    </p>
+                    <h6 className="mb-3 text-xs italic tracking-wide text-slate-800 dark:text-slate-300 md:text-sm">
+                      Summer Internship
+                    </h6>
+                    <h4 className="mb-3 text-base font-bold md:text-lg lg:text-xl xl:text-2xl">
+                      KW Associates and Architecture Sdn Bhd
+                    </h4>
+                    <p className="text-xs leading-snug text-lightText text-opacity-100 dark:text-dark1 md:text-sm">
+                      Converted AutoCAD floorplans into SketchUp models,
+                      adapting designs for new clients. Developed strong remote
+                      communication skills during the COVID-19 pandemic.
+                    </p>
+                  </div>
+                </div>
+                <div className="left-timeline z-10 mb-8 flex w-full flex-row-reverse items-center justify-between">
+                  <div className="order-1 w-[45%]"></div>
+                  <div className="order-1 w-[45%] px-1 py-4 text-right">
+                    <p className=" text-sm text-light1 dark:text-dark2 md:text-base">
                       London, UK 2022
                     </p>
                     <h6 className="mb-3 text-xs italic tracking-wide text-slate-800 dark:text-slate-300 md:text-sm">
@@ -69,53 +135,39 @@ const Timeline: React.FC = () => {
                       Optima Planning Engineering Ltd
                     </h4>
                     <p className="text-xs leading-snug text-lightText text-opacity-100 dark:text-dark1 md:text-sm">
-                      Dreams are the blueprints of the future. Dream big, but
-                      remember that it is the consistent and focused effort you
-                      put into realizing those dreams that will turn them into
-                      reality.
+                      Focused on client consultations and surveys for an
+                      extension project. Gained insights into large-scale
+                      projects and project management responsibilities,
+                      contributing to both house extensions and broader
+                      projects, optimising design discussions and planning
+                      applications.
                     </p>
                   </div>
                 </div>
-                <div className="left-timeline mb-8 flex w-full flex-row-reverse items-center justify-between">
-                  <div className="order-1 w-[45%]"></div>
-                  <div className="order-1 w-[45%] px-1 py-4 text-right">
-                    <p className=" text-sm text-light1 dark:text-dark2 md:text-base">
-                      Malaysia 2020
-                    </p>
-                    <h6 className="mb-3 text-xs italic tracking-wide text-slate-800 dark:text-slate-300 md:text-sm">
-                      Summer Internship
-                    </h6>
-                    <h4 className="mb-3 text-base font-bold md:text-lg lg:text-xl xl:text-2xl">
-                      KW Associates and Architecture Sdn. Bhd.
-                    </h4>
-                    <p className="text-xs leading-snug text-lightText text-opacity-100 dark:text-dark1 md:text-sm">
-                      Life is a series of challenges and opportunities. Embrace
-                      both, for they shape your unique journey.
-                    </p>
-                  </div>
-                </div>
-                <div className="right-timeline mb-8 flex w-full items-center justify-between">
+                <div className="right-timeline z-10 mb-8 flex w-full items-center justify-between">
                   <div className="order-1 w-[45%]"></div>
                   <div className="order-1  w-[45%] px-1 py-4 text-left">
                     <p className="text-sm text-light1 dark:text-dark2 md:text-base">
-                      6-9 May, 2021
+                      London, UK 2022
                     </p>
                     <h6 className="mb-3 text-xs italic tracking-wide text-slate-800 dark:text-slate-300 md:text-sm">
-                      Part Time Job
+                      Coding Course
                     </h6>
                     <h4 className="mb-3 text-base font-bold md:text-lg lg:text-xl xl:text-2xl">
-                      Participation
+                      SheCodes
                     </h4>
                     <p className="text-xs leading-snug text-lightText text-opacity-100 dark:text-dark1 md:text-sm">
-                      Life is a series of challenges and opportunities. Embrace
-                      both, for they shape your unique journey.
+                      Took an introductory course in HTML, CSS, and JavaScript,
+                      currently enrolled in a front-end developer course,
+                      demonstrating a commitment to continuous learning and
+                      skill diversification.
                     </p>
                   </div>
                 </div>
-                <div className="left-timeline mb-8 flex w-full flex-row-reverse items-center justify-between">
+                <div className="left-timeline z-10 mb-8 flex w-full flex-row-reverse items-center justify-between">
                   <div className="order-1 w-[45%]"></div>
                   <div className="order-1 w-[45%] px-1 py-4 text-right">
-                    <p className=" text-sm text-light1 dark:text-dark2 md:text-base">
+                    <p className="text-sm text-light1 dark:text-dark2 md:text-base">
                       London, UK 2023
                     </p>
                     <h6 className="mb-3 text-xs italic tracking-wide text-slate-800 dark:text-slate-300 md:text-sm">
@@ -125,66 +177,10 @@ const Timeline: React.FC = () => {
                       Optima Planning Engineering Ltd
                     </h4>
                     <p className="text-xs leading-snug text-lightText text-opacity-100 dark:text-dark1 md:text-sm">
-                      Success often requires faith in yourself that surpasses
-                      any doubt. Believe in your abilities, even when the path
-                      ahead seems uncertain, for it is in those moments of
-                      self-belief that you will discover your true potential.
-                    </p>
-                  </div>
-                </div>
-                <div className="right-timeline mb-8 flex w-full items-center justify-between">
-                  <div className="order-1 w-[45%]"></div>
-                  <div className="order-1  w-[45%] px-1 py-4 text-left">
-                    <p className="text-sm text-light1 dark:text-dark2 md:text-base">
-                      6-9 May, 2021
-                    </p>
-                    <h6 className="mb-3 text-xs italic tracking-wide text-slate-800 dark:text-slate-300 md:text-sm">
-                      Part Time Job
-                    </h6>
-                    <h4 className="mb-3 text-base font-bold md:text-lg lg:text-xl xl:text-2xl">
-                      Participation
-                    </h4>
-                    <p className="text-xs leading-snug text-lightText text-opacity-100 dark:text-dark1 md:text-sm">
-                      Life is a series of challenges and opportunities. Embrace
-                      both, for they shape your unique journey.
-                    </p>
-                  </div>
-                </div>
-                <div className="left-timeline mb-8 flex w-full flex-row-reverse items-center justify-between">
-                  <div className="order-1 w-[45%]"></div>
-                  <div className="order-1 w-[45%] px-1 py-4 text-right">
-                    <p className="text-sm text-light1 dark:text-dark2 md:text-base">
-                      10 May, 2021
-                    </p>
-                    <h6 className="mb-3 text-xs italic tracking-wide text-slate-800 dark:text-slate-300 md:text-sm">
-                      Part Time Job
-                    </h6>
-                    <h4 className="mb-3 text-base font-bold md:text-lg lg:text-xl xl:text-2xl">
-                      Result Declaration
-                    </h4>
-                    <p className="text-xs leading-snug text-lightText text-opacity-100 dark:text-dark1 md:text-sm">
-                      Life is a series of challenges and opportunities. Embrace
-                      both, for they shape your unique journey.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="right-timeline mb-8 flex w-full items-center justify-between">
-                  <div className="order-1 w-[45%]"></div>
-
-                  <div className="order-1  w-[45%] px-1 py-4">
-                    <p className="text-sm text-light1 dark:text-dark2 md:text-base">
-                      12 May, 2021
-                    </p>
-                    <h6 className="mb-3 text-xs italic tracking-wide text-slate-800 dark:text-slate-300 md:text-sm">
-                      Part Time Job
-                    </h6>
-                    <h4 className="mb-3 text-base font-bold md:text-lg lg:text-xl xl:text-2xl">
-                      SheCodes
-                    </h4>
-                    <p className="text-xs leading-snug text-lightText text-opacity-100 dark:text-dark1 md:text-sm">
-                      Life is a series of challenges and opportunities. Embrace
-                      both, for they shape your unique journey.
+                      Given the remote nature of the role, prioritised improving
+                      communication and time management skills while balancing
+                      work and school. Adapted creative techniques for remote
+                      training and addressing various situations.
                     </p>
                   </div>
                 </div>
