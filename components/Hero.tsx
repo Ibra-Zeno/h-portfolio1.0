@@ -16,13 +16,13 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <div className="relative md:mt-20">
+    <div className="relative overflow-x-hidden md:mt-20">
       {/* Background with gradient */}
       <div className=" bg-lightBg text-lightText dark:bg-darkBg dark:text-dark1">
         {/* Clip path shape */}
-        <div className="absolute inset-0 z-0 h-full blur-3xl">
+        <div className="max-w-screen absolute inset-0 z-0 h-full blur-3xl">
           <div
-            className=" from-lGrad1 to-lGrad2 dark:from-dGrad1 dark:to-dGrad2 z-0 mx-auto h-full w-[48rem] transform-gpu overflow-hidden bg-gradient-to-tr opacity-30 dark:opacity-[0.12]"
+            className=" z-0 mx-auto h-full w-[20rem] transform-gpu overflow-hidden bg-gradient-to-tr from-lGrad1 to-lGrad2 opacity-30 dark:from-dGrad1 dark:to-dGrad2 dark:opacity-[0.12] md:w-[48rem]"
             style={{
               clipPath: "ellipse(50% 36% at 50% 50%)",
             }}

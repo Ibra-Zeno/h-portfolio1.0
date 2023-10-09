@@ -83,7 +83,7 @@ const NavBar: React.FC = () => {
         </div>
         {/* Navigation */}
         <nav
-          className={`fixed bottom-10 right-5 z-40 flex w-16 transform flex-col items-center gap-y-4 rounded-lg border border-gray-300 bg-white px-2 pb-14 pt-4 text-lightText transition-transform duration-1000 dark:border-dark1 dark:bg-zinc-800  ${
+          className={`fixed bottom-10 right-5 z-40 flex w-16 transform flex-col items-center gap-y-6 rounded-lg border border-gray-300 bg-white px-2 pb-14 pt-4 text-lightText transition-transform duration-1000 dark:border-dark1 dark:bg-zinc-800  ${
             isNavOpen
               ? "translate-y-0 scale-100 opacity-100"
               : "translate-y-20 scale-0 opacity-0"

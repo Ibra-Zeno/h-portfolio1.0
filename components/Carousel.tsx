@@ -19,7 +19,7 @@ import { useTheme } from "../context/themeContext";
 
 const Carousel = () => {
   return (
-    <div className="relative mb-4 w-full bg-lightBg dark:bg-darkBg">
+    <div className="relative mb-4 w-full overflow-x-hidden bg-lightBg dark:bg-darkBg">
       <div className="flex h-fit items-center justify-center">
         <h3 className="flex py-12 text-xl md:text-2xl lg:text-3xl xl:text-4xl">
           My Portfolio
@@ -58,9 +58,9 @@ const HorizontalScrollCarousel = () => {
         className="relative bg-lightBg dark:bg-darkBg xl:h-[200vh]"
       >
         <div className="sticky top-0 flex h-screen flex-col items-center justify-center overflow-hidden">
-          <div className="pointer-events-none absolute inset-0 z-0 h-full blur-3xl">
+          <div className="max-w-screen pointer-events-none absolute inset-0 z-0 h-full blur-3xl">
             <div
-              className=" from-lGrad1 to-lGrad2 dark:from-dGrad1 dark:to-dGrad2 z-0 mx-auto h-full w-[90rem] transform-gpu overflow-hidden bg-gradient-to-tr opacity-30 dark:opacity-[0.2]"
+              className=" z-0 mx-auto h-full w-[90rem] transform-gpu overflow-hidden bg-gradient-to-tr from-lGrad1 to-lGrad2 opacity-30 dark:from-dGrad1 dark:to-dGrad2 dark:opacity-[0.2]"
               style={{
                 clipPath: "ellipse(34% 31% at 50% 50%)",
               }}
@@ -116,9 +116,9 @@ const MobileCarousel = () => {
 
   return (
     <div className="flex flex-col items-center justify-center">
-      <div className="pointer-events-none absolute inset-0 z-0 h-full blur-3xl">
+      <div className="max-w-screen pointer-events-none absolute inset-0 z-0 h-full blur-3xl">
         <div
-          className=" from-lGrad1 to-lGrad2 dark:from-dGrad1 dark:to-dGrad2 z-0 mx-auto h-full w-[24rem] transform-gpu overflow-hidden bg-gradient-to-tr opacity-30 dark:opacity-[0.2]"
+          className=" z-0 mx-auto h-full w-[24rem] transform-gpu overflow-hidden bg-gradient-to-tr from-lGrad1 to-lGrad2 opacity-30 dark:from-dGrad1 dark:to-dGrad2 dark:opacity-[0.2]"
           style={{
             clipPath: "ellipse(34% 31% at 50% 50%)",
           }}
@@ -138,9 +138,9 @@ const MobileCarousel = () => {
         </div>
       </div>
       <div className="mx-4 hidden grid-cols-3 justify-center gap-x-4 gap-y-6 md:grid md:gap-x-8 xl:hidden">
-        <div className="pointer-events-none absolute inset-0 z-0 h-full blur-3xl">
+        <div className="max-w-screen pointer-events-none absolute inset-0 z-0 h-full blur-3xl">
           <div
-            className=" from-lGrad1 to-lGrad2 dark:from-dGrad1 dark:to-dGrad2 z-0 mx-auto h-full w-[70rem] transform-gpu overflow-hidden bg-gradient-to-tr opacity-30 dark:opacity-[0.2]"
+            className=" z-0 mx-auto h-full w-[70rem] transform-gpu overflow-hidden bg-gradient-to-tr from-lGrad1 to-lGrad2 opacity-30 dark:from-dGrad1 dark:to-dGrad2 dark:opacity-[0.2]"
             style={{
               clipPath: "ellipse(34% 31% at 50% 50%)",
             }}
