@@ -19,7 +19,7 @@ import { useTheme } from "../context/themeContext";
 
 const Carousel = () => {
   return (
-    <div className="relative mb-4 w-full overflow-x-hidden bg-lightBg dark:bg-darkBg">
+    <div className="relative mb-4 w-full bg-lightBg dark:bg-darkBg">
       <div className="flex h-fit items-center justify-center">
         <h3 className="flex py-12 text-xl md:text-2xl lg:text-3xl xl:text-4xl">
           My Portfolio
@@ -57,10 +57,10 @@ const HorizontalScrollCarousel = () => {
         id="portfolio"
         className="relative bg-lightBg dark:bg-darkBg xl:h-[200vh]"
       >
-        <div className="sticky top-0 flex h-screen flex-col items-center justify-center overflow-hidden">
+        <div className="sticky top-0 flex h-screen flex-col items-center justify-center">
           <div className="max-w-screen pointer-events-none absolute inset-0 z-0 h-full blur-3xl">
             <div
-              className=" z-0 mx-auto h-full w-[90rem] transform-gpu overflow-hidden bg-gradient-to-tr from-lGrad1 to-lGrad2 opacity-30 dark:from-dGrad1 dark:to-dGrad2 dark:opacity-[0.2]"
+              className=" z-0 mx-auto h-full w-[90rem] transform-gpu overflow-hidden  bg-gradient-to-tr from-lGrad1 to-lGrad2 opacity-30 dark:from-dGrad1 dark:to-dGrad2 dark:opacity-[0.2]"
               style={{
                 clipPath: "ellipse(34% 31% at 50% 50%)",
               }}
