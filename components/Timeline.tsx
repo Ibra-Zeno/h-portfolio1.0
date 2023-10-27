@@ -5,7 +5,7 @@ import { urbanDesign } from "../public/images/urban_design";
 const Timeline: React.FC = () => {
   const handleCvClick = () => {
     setTimeout(() => {
-      Router.push("/");
+      window.open("/HY-CV.pdf", "_blank");
     }, 400);
   };
   return (
@@ -38,7 +38,7 @@ const Timeline: React.FC = () => {
               <div className="relative h-full w-screen overflow-hidden px-2 py-10 sm:w-auto">
                 <div className="pointer-events-none absolute inset-0 z-0 h-full blur-2xl">
                   <div
-                    className=" from-lGrad1 to-lGrad2 dark:from-dGrad1 dark:to-dGrad2 z-0 mx-auto h-full w-[15rem] transform-gpu overflow-hidden bg-gradient-to-tr opacity-30 dark:opacity-[0.14] lg:w-[40rem]"
+                    className=" z-0 mx-auto h-full w-[15rem] transform-gpu overflow-hidden bg-gradient-to-tr from-lGrad1 to-lGrad2 opacity-30 dark:from-dGrad1 dark:to-dGrad2 dark:opacity-[0.14] lg:w-[40rem]"
                     style={{
                       clipPath: "ellipse(7% 50% at 50% 50%)",
                     }}

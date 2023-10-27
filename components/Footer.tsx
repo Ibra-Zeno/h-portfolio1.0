@@ -18,7 +18,8 @@ const Footer: React.FC = () => {
             <span className="m-auto inline-flex w-full justify-center gap-3 md:w-auto md:justify-start">
               <Link
                 className="h-6 w-6 fill-black transition hover:text-blue-500"
-                href={"/"}
+                href={"/HY-CV.pdf"}
+                target="_blank"
               >
                 <span className="sr-only">CV</span>
                 <FileText className="h-5 w-5" />

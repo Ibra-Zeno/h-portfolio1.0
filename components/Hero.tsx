@@ -6,13 +6,13 @@ import Router from "next/router";
 const Hero: React.FC = () => {
   const handleCvClick = () => {
     setTimeout(() => {
-      Router.push("/");
-    }, 400);
+      window.open("/HY-CV.pdf", "_blank");
+    }, 200);
   };
   const handlePortfolioClick = () => {
     setTimeout(() => {
       Router.push("/#portfolio");
-    }, 400);
+    }, 200);
   };
 
   return (
