@@ -1,25 +1,24 @@
 import { Lightbulb } from "lucide-react";
-import Image from "next/image";
 import { useState } from "react";
-import { Skeleton } from "@nextui-org/react";
+import { Skeleton, Image } from "@nextui-org/react";
 
 const features = [
   {
-    name: "Cool person.",
+    name: "Attention to Detail.",
     description:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.",
+      "I have a strong appreciation for the finer elements of design, ensuring that every project reflects a high level of craftsmanship and aesthetic consideration.",
     icon: Lightbulb,
   },
   {
-    name: "Mad bamajama.",
+    name: "Adaptability and Continuous Learning.",
     description:
-      "Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.",
+      "I embrace change with an open mind, always ready to learn and evolve in fast-paced environments.",
     icon: Lightbulb,
   },
   {
-    name: "Creative chef.",
+    name: "Effective Communication.",
     description:
-      "Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.",
+      "I value clear and respectful communication, both as an active listener and a contributor to team discussions.",
     icon: Lightbulb,
   },
 ];
@@ -33,16 +32,14 @@ export default function About() {
         <div className="mx-auto grid grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:max-w-screen-2xl lg:grid-cols-2">
           <div className="lg:pr-8 lg:pt-4">
             <div className="lg:max-w-lg">
-              <h2 className="text-base font-semibold leading-7 text-light2 dark:text-dark3 ">
-                The one and only
-              </h2>
               <p className="mt-2 text-3xl font-bold tracking-tight text-lightText  dark:text-dark2 sm:text-4xl">
-                A better workflow
+                The Person Behind the Pillars
               </p>
               <p className="mt-6 text-lg leading-8 text-lightText dark:text-dark1">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Maiores impedit perferendis suscipit eaque, iste dolor
-                cupiditate blanditiis ratione.
+                I have a special place for design in my heart and, luckily, I
+                have been fortunate to gain experiences from several different
+                companies around the world. I look forward to learning and
+                growing, while being part of a collaborative team.
               </p>
               <dl className="mt-10 max-w-xl space-y-8 text-base leading-7 text-lightText dark:text-dark1 lg:max-w-none">
                 {features.map((feature) => (
@@ -60,22 +57,17 @@ export default function About() {
               </dl>
             </div>
           </div>
-          <Skeleton
-            isLoaded={!isImageLoading}
-            className="overflow-visible rounded-lg"
-          >
-            <Image
-              src={
-                "https://images.unsplash.com/photo-1693856758403-bba589db78dc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80"
-              }
-              alt="Product screenshot"
-              className="aspect-video w-[48rem] max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem] md:-ml-4 lg:-ml-0"
-              draggable={false}
-              width={2432}
-              onLoad={() => setIsImageLoading(false)}
-              height={1442}
-            />
-          </Skeleton>
+          <Image
+            src={
+              "https://images.unsplash.com/photo-1693856758403-bba589db78dc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80"
+            }
+            alt="Product screenshot"
+            className="aspect-video w-[48rem] max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem] md:-ml-4 lg:-ml-0"
+            draggable={false}
+            width={2432}
+            onLoad={() => setIsImageLoading(false)}
+            height={1442}
+          />
         </div>
       </div>
     </div>
