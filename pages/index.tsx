@@ -10,7 +10,7 @@ import Timeline from "../components/Timeline";
 
 export default function Home() {
   return (
-    <>
+    <div className="max-w-[100vw]">
       <Layout>
         <NavBar />
         <Hero />
@@ -21,6 +21,6 @@ export default function Home() {
         <Contact />
         <Footer />
       </Layout>
-    </>
+    </div>
   );
 }
