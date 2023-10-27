@@ -45,11 +45,11 @@ const Hero: React.FC = () => {
               </div>
               <div className="mb-10 max-w-xl text-center md:mx-auto md:mb-12 lg:max-w-2xl">
                 <h2 className="mb-6 max-w-lg font-sans text-3xl font-bold leading-none tracking-tight text-lightText dark:text-dark1 sm:text-4xl md:mx-auto">
-                  Hello, my little stalker!
+                  Haranya Yogananthan
                 </h2>
                 <p className="max-w-prose text-base text-lightText dark:text-dark1 md:text-lg">
-                  The colors are due to change (especially the background on
-                  your picture), but is the picture size better for you?
+                  <strong>3 Years of Architectural Design:</strong> My Journey
+                  from Education to Creation
                 </p>
               </div>
               <div className="flex justify-center">
