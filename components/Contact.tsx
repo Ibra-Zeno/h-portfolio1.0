@@ -41,9 +41,9 @@ const Contact: React.FC = () => {
                 Get in touch
               </h3>
               <p className="mb-6 text-sm sm:text-base md:mb-14 xl:text-lg">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa
-                nam ad fugit quasi sint eius harum iure. Dolorum iusto iure
-                neque illo molestias totam, ea fugit, ipsam, rem rerum nulla?
+                I am currently looking for new opportunities, my inbox is always
+                open. Whether you have a question or just want to say hi,
+                I&apos;ll try my best to get back to you!
               </p>
               <div className="mb-6 flex flex-col gap-y-3 md:mb-0">
                 <div className="flex flex-row justify-center gap-x-3 text-sm font-medium md:justify-start md:text-base">
