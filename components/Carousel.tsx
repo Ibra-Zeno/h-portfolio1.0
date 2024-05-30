@@ -26,12 +26,12 @@ const Carousel = () => {
         </h3>
       </div>
 
-      <div className="hidden xl:block">
+      {/* <div className="hidden xl:block">
         <HorizontalScrollCarousel />
       </div>
-      <div className="xl:hidden">
-        <MobileCarousel />
-      </div>
+      <div className="xl:hidden"> */}
+      <MobileCarousel />
+      {/* </div> */}
     </div>
   );
 };
@@ -137,7 +137,7 @@ const MobileCarousel = () => {
           ))}
         </div>
       </div>
-      <div className="mx-4 hidden grid-cols-3 justify-center gap-x-4 gap-y-6 md:grid md:gap-x-8 xl:hidden">
+      <div className="mx-4 hidden grid-cols-3 justify-center gap-x-4 gap-y-6 md:grid md:gap-x-8 xl:gap-x-12 xl:gap-y-10">
         <div className="max-w-screen pointer-events-none absolute inset-0 z-0 h-full blur-3xl">
           <div
             className=" z-0 mx-auto h-full w-[70rem] transform-gpu overflow-hidden bg-gradient-to-tr from-lGrad1 to-lGrad2 opacity-30 dark:from-dGrad1 dark:to-dGrad2 dark:opacity-[0.2]"
@@ -148,7 +148,7 @@ const MobileCarousel = () => {
         </div>
         {grid.map((row, rowIndex) => (
           <div
-            className="flex h-full flex-col gap-y-6"
+            className="flex h-full flex-col gap-y-6 xl:gap-y-10"
             data-spotlight
             key={rowIndex}
           >
