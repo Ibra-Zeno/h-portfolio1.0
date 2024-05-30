@@ -184,6 +184,31 @@ const Timeline: React.FC = () => {
                     </p>
                   </div>
                 </div>
+                <div className="right-timeline z-10 mb-8 flex w-full items-center justify-between">
+                  <div className="order-1 w-[45%]"></div>
+                  <div className="order-1  w-[45%] px-1 py-4 text-left">
+                    <p className="text-sm text-light1 dark:text-dark2 md:text-base">
+                      London, UK 2023 - Present
+                    </p>
+                    <h6 className="mb-3 text-xs italic tracking-wide text-slate-800 dark:text-slate-300 md:text-sm">
+                      Draftsman
+                    </h6>
+                    <h4 className="mb-3 text-base font-bold md:text-lg lg:text-xl xl:text-2xl">
+                      Peter Pendleton And Associates Ltd
+                    </h4>
+                    <p className="text-xs leading-snug text-lightText text-opacity-100 dark:text-dark1 md:text-sm">
+                      Oversaw the full development of a residential extension,
+                      handling everything from planning to contractor
+                      management. Maintained strong communication with clients,
+                      ensuring their vision was met within time and budget
+                      constraints. Coordinated with various professionals to
+                      resolve issues quickly, demonstrating strong project
+                      management skills. Also designed a project converting an
+                      abandoned building into a profitable hotel, focusing on
+                      space efficiency and safety compliance.
+                    </p>
+                  </div>
+                </div>
               </div>
               <div
                 className="flex-start relative mx-auto flex max-h-[400px] w-[300px] justify-center p-6 sm:w-[400px] lg:px-6 lg:py-0"
