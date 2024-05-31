@@ -21,7 +21,10 @@ const Carousel = () => {
   return (
     <div className="relative mb-4 w-full bg-lightBg dark:bg-darkBg">
       <div className="flex h-fit items-center justify-center">
-        <h3 className="flex py-12 text-xl md:text-2xl lg:text-3xl xl:text-4xl">
+        <h3
+          id="portfolio"
+          className="flex py-12 text-xl md:text-2xl lg:text-3xl xl:text-4xl"
+        >
           My Portfolio
         </h3>
       </div>
