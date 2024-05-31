@@ -29,78 +29,10 @@ const Carousel = () => {
         </h3>
       </div>
 
-      {/* <div className="hidden xl:block">
-        <HorizontalScrollCarousel />
-      </div>
-      <div className="xl:hidden"> */}
       <MobileCarousel />
-      {/* </div> */}
     </div>
   );
 };
-
-const HorizontalScrollCarousel = () => {
-  const targetRef = useRef(null);
-
-  const { scrollYProgress } = useScroll({
-    target: targetRef,
-  });
-
-  const x = useTransform(scrollYProgress, [0, 1], ["20%", "-20%"]);
-
-  // Divide 'cards' into two arrays for two rows
-  const middleIndex = Math.ceil(cards.length / 2);
-  const firstRow = cards.slice(0, middleIndex);
-  const secondRow = cards.slice(middleIndex);
-
-  return (
-    <>
-      <section
-        ref={targetRef}
-        id="portfolio"
-        className="relative bg-lightBg dark:bg-darkBg xl:h-[200vh]"
-      >
-        <div className="sticky top-0 flex h-screen flex-col items-center justify-center">
-          <div className="max-w-screen pointer-events-none absolute inset-0 z-0 h-full blur-3xl">
-            <div
-              className=" z-0 mx-auto h-full w-[90rem] transform-gpu overflow-hidden  bg-gradient-to-tr from-lGrad1 to-lGrad2 opacity-30 dark:from-dGrad1 dark:to-dGrad2 dark:opacity-[0.2]"
-              style={{
-                clipPath: "ellipse(34% 31% at 50% 50%)",
-              }}
-            ></div>
-          </div>
-          <motion.div
-            style={{ x }}
-            className="flex flex-col justify-center gap-y-6"
-          >
-            <div className="flex gap-x-10" data-spotlight>
-              {firstRow.map((card) => (
-                <Card card={card} key={card.id} />
-              ))}
-            </div>
-            <div className="flex justify-center gap-x-10" data-spotlight>
-              {secondRow.map((card) => (
-                <Card card={card} key={card.id} />
-              ))}
-            </div>
-          </motion.div>
-        </div>
-      </section>
-    </>
-  );
-};
-
-// Helper function to split an array into rows of a given size
-function chunkArray<T>(arr: T[], size: number): T[][] {
-  return arr.reduce<T[][]>((chunks, element, index) => {
-    if (index % size === 0) {
-      chunks.push([element]);
-    } else {
-      chunks[chunks.length - 1].push(element);
-    }
-    return chunks;
-  }, []);
-}
 
 const MobileCarousel = () => {
   const middleIndex = Math.floor(cards.length / 2);
