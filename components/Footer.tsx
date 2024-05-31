@@ -36,7 +36,9 @@ const Footer: React.FC = () => {
           <p className="mt-4 text-center">
             <span className="mx-auto mt-2 text-sm text-gray-500">
               Designed and coded by{" "}
-              <span className="font-semibold italic">Ibrahim Kalam</span>
+              <span className="font-semibold italic">
+                <Link href="https://ibra-k.co.uk">Ibrahim Kalam</Link>
+              </span>
             </span>
           </p>
         </div>
