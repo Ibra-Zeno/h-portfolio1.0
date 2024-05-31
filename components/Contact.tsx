@@ -1,26 +1,93 @@
-import { Input, Textarea, Button } from "@nextui-org/react";
 import Link from "next/link";
-import { Building, Mail } from "lucide-react";
+import { MapPin, Mail } from "lucide-react";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { Button } from "@nextui-org/react";
 
 const Contact: React.FC = () => {
-  const [isSmallScreen, setIsSmallScreen] = useState(false);
+  const handleCvClick = () => {
+    setTimeout(() => {
+      window.open("/HY-CV.pdf", "_blank");
+    }, 400);
+  };
+  return (
+    <section
+      className="mt-12 bg-gradient-to-tr from-lightBg to-transparent dark:from-darkBg dark:to-transparent lg:mt-20"
+      id="contact"
+    >
+      <div className="container mx-auto px-6 py-12">
+        <div className="text-center md:text-left">
+          <p className="font-medium text-light3 dark:text-dark2">Contact us</p>
+          <h1 className="mt-2 text-2xl font-semibold text-gray-800 dark:text-white md:text-3xl">
+            We’d love to hear from you
+          </h1>
+          <p className="mt-3 text-gray-500 dark:text-gray-400">
+            Our friendly team is always here to chat.
+          </p>
+        </div>
 
-  // Check the screen size when the component mounts and on window resize
-  useEffect(() => {
-    const handleResize = () => {
-      setIsSmallScreen(window.innerWidth <= 1023); // Adjust the breakpoint as needed
-    };
+        <div className="mt-10 grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="rounded-lg bg-blue-50/50 p-4 shadow-md dark:bg-dark4/30 md:p-6">
+            <div className="inline-block rounded-lg  bg-lightBg/40 p-2 text-light3 dark:bg-gray-700 dark:text-dark3">
+              <MapPin className="" />
+            </div>
+            <h2 className="mt-2 text-base font-medium text-gray-800 dark:text-white">
+              Location
+            </h2>
+            <p className="mt-1.5 text-sm text-light2/80 dark:text-dark2">
+              London, England
+            </p>
+          </div>
+          <div className="rounded-lg bg-blue-50/50 p-4 shadow-md dark:bg-dark4/30 md:p-6">
+            <div className="inline-block rounded-lg  bg-lightBg/40 p-2 text-light3 dark:bg-gray-700 dark:text-dark3">
+              <MapPin className="" />
+            </div>
+            <h2 className="mt-2 text-base font-medium text-gray-800 dark:text-white">
+              Email
+            </h2>
+            <Link
+              href="mailto:haranya.y@gmail.com"
+              className="mt-1.5 text-sm text-light2/80 transition-all duration-400 ease-soft-spring hover:text-dark2/75 dark:text-dark2 hover:dark:text-dark2/75"
+            >
+              haranya.y@gmail.com
+            </Link>
+          </div>
+          <div className="rounded-lg bg-blue-50/50 p-4 shadow-md dark:bg-dark4/30 md:p-6">
+            <div className="flex w-fit rounded-lg  bg-lightBg/40 p-2 text-light3 dark:bg-gray-700 dark:text-dark3">
+              <MapPin className="" />
+            </div>
+            <Button
+              className="mx-auto mt-6 w-fit rounded border-2 border-light3 bg-lightBg/25 font-bold tracking-wider text-lightText transition-all duration-400 ease-soft-spring hover:border-light3/80 hover:bg-light3 hover:text-dark1 dark:border-dark3 dark:bg-darkBg dark:text-dark1 dark:hover:border-dark3/80 dark:hover:bg-dark3 md:mx-0 "
+              onClick={handleCvClick}
+              size="md"
+            >
+              View CV
+            </Button>
+          </div>
 
-    window.addEventListener("resize", handleResize);
-    handleResize(); // Check the screen size initially
+          {/* <div className="rounded-lg bg-blue-50/50 p-4 dark:bg-gray-800 md:p-6">
+            <div className="inline-block  rounded-lg bg-blue-100/80 p-2 text-blue-500 dark:bg-gray-700">
+              <Mail className="" />
+            </div>
+            <h2 className="mt-4 text-base font-medium text-gray-800 dark:text-white">
+              Email
+            </h2>
+            <p className="mt-2 text-sm text-blue-500 dark:text-blue-400">
+              <Link href="mailto:haranya.y@gmail.com">haranya.y@gmail.com</Link>
+            </p>
+          </div> */}
+        </div>
+      </div>
+    </section>
+  );
+};
 
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
+export default Contact;
 
+/* import Link from "next/link";
+import { Building, Mail } from "lucide-react";
+import Image from "next/image";
+
+const Contact: React.FC = () => {
   return (
     <section className="">
       <div className=" mx-auto flex h-fit flex-col py-20 md:grid md:h-full md:grid-cols-2">
@@ -52,103 +119,14 @@ const Contact: React.FC = () => {
                 </div>
                 <div className="flex flex-row justify-center gap-x-3 text-sm font-medium md:justify-start md:text-base">
                   <Mail />
-                  <Link href="mailto:example@test.com">example@test.com</Link>
+                  <Link href="mailto:haranya.y@gmail.com">
+                    haranya.y@gmail.com
+                  </Link>
                 </div>
                 <div></div>
               </div>
             </div>
           </div>
-        </div>
-        <div className="md:col-span-1">
-          <form className="mx-auto flex h-fit max-w-3xl flex-col justify-center gap-y-9 px-12 py-9 text-base md:order-none lg:px-24">
-            <div className="flex flex-row gap-x-6">
-              <Input
-                label="First Name"
-                size={isSmallScreen ? "sm" : "lg"} // Apply the appropriate size based on screen width
-                classNames={{
-                  inputWrapper: [
-                    "shadow-xl",
-                    "bg-default-200/50",
-                    "dark:bg-default/60",
-                    "backdrop-blur-xl",
-                    "backdrop-saturate-200",
-                    "hover:bg-default-200/70",
-                    "dark:hover:bg-default/70",
-                    "group-data-[focused=true]:bg-default-200/50",
-                    "dark:group-data-[focused=true]:bg-default/60",
-                    "!cursor-text",
-                  ],
-                }}
-                type="first-name"
-              />
-              <Input
-                label="Last Name"
-                size={isSmallScreen ? "sm" : "lg"} // Apply the appropriate size based on screen width
-                classNames={{
-                  inputWrapper: [
-                    "shadow-xl",
-                    "bg-default-200/50",
-                    "dark:bg-default/60",
-                    "backdrop-blur-xl",
-                    "backdrop-saturate-200",
-                    "hover:bg-default-200/70",
-                    "dark:hover:bg-default/70",
-                    "group-data-[focused=true]:bg-default-200/50",
-                    "dark:group-data-[focused=true]:bg-default/60",
-                    "!cursor-text",
-                  ],
-                }}
-                type="last-name"
-              />
-            </div>
-            <Input
-              type="email"
-              label="Email"
-              size={isSmallScreen ? "sm" : "lg"} // Apply the appropriate size based on screen width
-              classNames={{
-                inputWrapper: [
-                  "shadow-xl",
-                  "bg-default-200/50",
-                  "dark:bg-default/60",
-                  "backdrop-blur-xl",
-                  "backdrop-saturate-200",
-                  "hover:bg-default-200/70",
-                  "dark:hover:bg-default/70",
-                  "group-data-[focused=true]:bg-default-200/50",
-                  "dark:group-data-[focused=true]:bg-default/60",
-                  "!cursor-text",
-                ],
-              }}
-            />
-            <Textarea
-              label="Your Message"
-              size={isSmallScreen ? "sm" : "lg"} // Apply the appropriate size based on screen width
-              classNames={{
-                inputWrapper: [
-                  "shadow-xl",
-                  "bg-default-200/50",
-                  "dark:bg-default/60",
-                  "backdrop-blur-xl",
-                  "backdrop-saturate-200",
-                  "hover:bg-default-200/70",
-                  "dark:hover:bg-default/70",
-                  "group-data-[focused=true]:bg-default-200/50",
-                  "dark:group-data-[focused=true]:bg-default/60",
-                  "!cursor-text",
-                ],
-              }}
-              labelPlacement="inside"
-              type="message"
-            />
-            <Button
-              type="submit"
-              size="lg"
-              radius="sm"
-              className="bg-light3 font-semibold tracking-wide text-lightBg dark:bg-dark3"
-            >
-              Submit
-            </Button>
-          </form>
         </div>
       </div>
     </section>
@@ -156,3 +134,4 @@ const Contact: React.FC = () => {
 };
 
 export default Contact;
+ */
