@@ -20,6 +20,11 @@ const NavBar: React.FC = () => {
     }, 400);
   };
 
+  const handlePortfolioClick = (e: MouseEvent) => {
+    e.preventDefault();
+    Router.push("/#portfolio"); // Using router to push to the portfolio section
+  };
+
   const { theme, toggleTheme } = useTheme();
   return (
     <div>
@@ -46,7 +51,7 @@ const NavBar: React.FC = () => {
             delay={100}
             className="hidden rounded-lg bg-light2 font-primary text-sm tracking-wide text-dark1 dark:bg-dark2/90 md:inline-block "
           >
-            <Link href="/">
+            <Link href="#portfolio">
               <Briefcase
                 size={22}
                 className="transition-all duration-200 ease-in-out hover:text-gray-600"
@@ -59,7 +64,7 @@ const NavBar: React.FC = () => {
             delay={100}
             className="rounded-lg bg-light2 font-primary text-sm tracking-wide text-dark1 dark:bg-dark2/90 "
           >
-            <Link href="/">
+            <Link href="#contact">
               <Send size={22} />
             </Link>
           </Tooltip>
@@ -96,7 +101,8 @@ const NavBar: React.FC = () => {
             {theme === "light" ? <Moon /> : <Sun />}
           </button>
           <Link
-            href="/"
+            href="#portfolio"
+            onClick={handlePortfolioClick}
             className="rounded-lg font-primary text-sm tracking-wide text-lightText dark:text-dark1"
           >
             <Briefcase
@@ -105,10 +111,14 @@ const NavBar: React.FC = () => {
             />
           </Link>
           <Link
-            href="/"
+            href="#contact"
             className="rounded-lg font-primary text-sm tracking-wide text-lightText dark:text-dark1"
           >
-            <Send size={22} />
+            <Send
+              size={22}
+              href="#contact"
+              className="rounded-lg font-primary text-sm tracking-wide text-lightText dark:text-dark1"
+            />
           </Link>
         </nav>
       </div>
