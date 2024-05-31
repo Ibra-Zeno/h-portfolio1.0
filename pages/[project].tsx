@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
 import { portfolioData } from "../public/assets/portfolioData";
 import Gallery from "../components/Gallery";
+import Footer from "../components/Footer";
 import Router from "next/router";
 import Link from "next/link";
 import Layout from "../components/Layout";
@@ -102,6 +103,7 @@ const ProjectPage: React.FC = () => {
           </div>
         </section>
       </Layout>
+      <Footer />
     </>
   );
 };
