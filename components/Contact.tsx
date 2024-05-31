@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { MapPin, Mail } from "lucide-react";
+import { MapPin, Mail, File } from "lucide-react";
 import Image from "next/image";
 import { Button } from "@nextui-org/react";
 
@@ -39,7 +39,7 @@ const Contact: React.FC = () => {
           </div>
           <div className="rounded-lg bg-blue-50/50 p-4 shadow-md dark:bg-dark4/30 md:p-6">
             <div className="inline-block rounded-lg  bg-lightBg/40 p-2 text-light3 dark:bg-gray-700 dark:text-dark3">
-              <MapPin className="" />
+              <Mail />
             </div>
             <h2 className="mt-2 text-base font-medium text-gray-800 dark:text-white">
               Email
@@ -53,7 +53,7 @@ const Contact: React.FC = () => {
           </div>
           <div className="rounded-lg bg-blue-50/50 p-4 shadow-md dark:bg-dark4/30 md:p-6">
             <div className="flex w-fit rounded-lg  bg-lightBg/40 p-2 text-light3 dark:bg-gray-700 dark:text-dark3">
-              <MapPin className="" />
+              <File />
             </div>
             <Button
               className="mx-auto mt-6 w-fit rounded border-2 border-light3 bg-lightBg/25 font-bold tracking-wider text-lightText transition-all duration-400 ease-soft-spring hover:border-light3/80 hover:bg-light3 hover:text-dark1 dark:border-dark3 dark:bg-darkBg dark:text-dark1 dark:hover:border-dark3/80 dark:hover:bg-dark3 md:mx-0 "
