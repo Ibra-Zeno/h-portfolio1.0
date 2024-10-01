@@ -6,19 +6,19 @@ const features = [
   {
     name: "Attention to Detail.",
     description:
-      "I have a strong appreciation for the finer elements of design, ensuring that every project reflects a high level of craftsmanship and aesthetic consideration.",
+      "Perfecting small details is the most rewarding part of design, as they truly bring a project to life.",
     icon: Lightbulb,
   },
   {
-    name: "Adaptability and Continuous Learning.",
+    name: "Adaptability and Growth.",
     description:
-      "I embrace change with an open mind, always ready to learn and evolve in fast-paced environments.",
+      "Every project has taught me something valuable. I'm excited to keep learning, growing, and contributing to meaningful work.",
     icon: Lightbulb,
   },
   {
-    name: "Effective Communication.",
+    name: "Balancing Creativity with Functionality.",
     description:
-      "I value clear and respectful communication, both as an active listener and a contributor to team discussions.",
+      "Good design is about more than aesthetics—it's about how things work and how they make people feel. I aim to create work that blends creativity and practicality.",
     icon: Lightbulb,
   },
 ];
@@ -36,10 +36,10 @@ export default function About() {
                 The Person Behind the Pillars
               </p>
               <p className="mt-6 text-lg leading-8 text-lightText dark:text-dark1">
-                I have a special place for design in my heart and, luckily, I
-                have been fortunate to gain experiences from several different
-                companies around the world. I look forward to learning and
-                growing, while being part of a collaborative team.
+                Design helps me understand and shape the world. From
+                architecture to web design, I enjoy the thought that goes into
+                every detail. My journey across England and Malaysia has
+                enriched my design experience.
               </p>
               <dl className="mt-10 max-w-xl space-y-8 text-base leading-7 text-lightText dark:text-dark1 lg:max-w-none">
                 {features.map((feature) => (
